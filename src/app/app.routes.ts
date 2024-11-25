@@ -1,13 +1,9 @@
 import { Routes } from '@angular/router';
+import { ModulosGregosComponent } from './components/modulos-gregos/modulos-gregos.component';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'modulos-gregos',
-        pathMatch: 'full'
-    },
-    {
-        path: 'modulos-gregos',
-        loadComponent: () => import('./components/modulos-gregos/modulos-gregos.component').then(component => component.ModulosGregosComponent)
+        component: ModulosGregosComponent
     }
 ];
