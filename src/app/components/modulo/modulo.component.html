@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <th scope="col"></th>
-                @for(casa of modulo.casas; track casa) {
+                @for(casa of modulo.casas; track $index) {
                 <th scope="col">
                     {{ casa }}
                 </th>
@@ -23,12 +23,12 @@
             </tr>
         </thead>
         <tbody>
-            @for(corda of modulo.cordas; track corda) {
+            @for(corda of modulo.cordas; track $index) {
             <tr>
                 <th scope="row">
                     {{ corda.corda }}
                 </th>
-                @for(nota of corda.notas; track nota) {
+                @for(nota of corda.notas; track $index) {
                 <td [ngClass]="{
                     'nota': nota !== ''
                 }">
