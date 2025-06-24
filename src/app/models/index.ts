@@ -1,1 +1,1 @@
-export * from './modulo.model';
+export * from './shape.model';

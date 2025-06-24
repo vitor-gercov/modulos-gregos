@@ -1,8 +1,8 @@
 import { Component, computed, model, ModelSignal, Signal, signal, WritableSignal } from '@angular/core';
 import { ModuloComponent } from "../modulo/modulo.component";
-import { Modulo } from '../../models';
+import { Shape } from '../../models';
 import { FormsModule } from '@angular/forms';
-import { ModulosGregos } from '../../models/modulos-gregos.model';
+import { CAGED } from '../../models/caged.model';
 
 
 @Component({
@@ -12,6 +12,6 @@ import { ModulosGregos } from '../../models/modulos-gregos.model';
   styleUrl: './modulos-gregos.component.css'
 })
 export class ModulosGregosComponent {
-  escalaSelecionada: ModelSignal<string> = model<string>('maior');
-  modulosGregos: Signal<Modulo[]> = computed(() => new ModulosGregos(this.escalaSelecionada()).modulos)
+  scaleSelected: ModelSignal<string> = model<string>('major');
+  caged: Signal<Shape[]> = computed(() => new CAGED(this.scaleSelected()).shapes)
 }

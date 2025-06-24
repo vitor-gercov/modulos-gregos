@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Modulo } from '../../models';
+import { Shape } from '../../models';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -9,5 +9,5 @@ import { NgClass } from '@angular/common';
   styleUrl: './modulo.component.css'
 })
 export class ModuloComponent {
-  @Input({ required: true }) modulo!: Modulo;
+  @Input({ required: true }) modulo!: Shape;
 }

@@ -1,4 +1,4 @@
-export class Modulo {
+export class Shape {
     constructor(
         public titulo: string,
         public casas: string[],

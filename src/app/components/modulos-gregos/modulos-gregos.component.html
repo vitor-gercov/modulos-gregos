@@ -9,25 +9,25 @@
             Escolha qual escala você quer estudar:
         </legend>
         <span class="radio_option">
-            <input type="radio" id="major_radio" name="scale">
+            <input type="radio" id="major_radio" name="scale" value="major" [(ngModel)]="scaleSelected">
             <label for="major_radio">
                 Maior
             </label>
         </span>
         <span class="radio_option">
-            <input type="radio" id="penta_radio" name="scale">
+            <input type="radio" id="penta_radio" name="scale" value="penta" [(ngModel)]="scaleSelected">
             <label for="penta_radio">
                 Penta
             </label>
         </span>
         <span class="radio_option">
-            <input type="radio" id="penta_blues_radio" name="scale">
+            <input type="radio" id="penta_blues_radio" name="scale" value="penta_blues" [(ngModel)]="scaleSelected">
             <label for="penta_blues_radio">
                 Penta Blues
             </label>
         </span>
     </fieldset>
-    @for(modulo of modulosGregos(); track modulo) {
-    <app-modulo [modulo]="modulo" />
+    @for(shape of caged(); track shape) {
+    <app-modulo [modulo]="shape" />
     }
 </main>
