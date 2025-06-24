@@ -1,10 +1,10 @@
 export class Shape {
     constructor(
-        public titulo: string,
-        public casas: string[],
-        public cordas: {
-            corda: string,
-            notas: string[]
+        public title: string,
+        public frets: string[],
+        public strings: {
+            string: string,
+            notes: string[]
         }[]
     ) { }
 };

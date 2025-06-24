@@ -13,5 +13,19 @@ import { CAGED } from '../../models/caged.model';
 })
 export class ModulosGregosComponent {
   scaleSelected: ModelSignal<string> = model<string>('major');
-  caged: Signal<Shape[]> = computed(() => new CAGED(this.scaleSelected()).shapes)
+  dominantHand: ModelSignal<string> = model<string>('right_handed');
+  caged: Signal<Shape[]> = computed(() => {
+    let shapes = new CAGED(this.scaleSelected()).shapes;
+    if (this.dominantHand() === 'left_handed') {
+      shapes.map(shape => {
+        shape.frets = shape.frets.reverse();
+        shape.strings = shape.strings.map(string => {
+          string.notes = string.notes.reverse();
+          return string;
+        });
+        return shape;
+      });
+    }
+    return shapes;
+  });
 }

@@ -1,7 +1,7 @@
 @if(modulo) {
 <section>
     <h2>
-        {{ modulo.titulo }}
+        {{ modulo.title }}
     </h2>
     <table>
         <thead>
@@ -9,30 +9,30 @@
                 <th scope="col">
                     Corda
                 </th>
-                <th [attr.colspan]="modulo.casas.length" scope="col">
+                <th [attr.colspan]="modulo.frets.length" scope="col">
                     Casa
                 </th>
             </tr>
             <tr>
                 <th scope="col"></th>
-                @for(casa of modulo.casas; track $index) {
+                @for(fret of modulo.frets; track $index) {
                 <th scope="col">
-                    {{ casa }}
+                    {{ fret }}
                 </th>
                 }
             </tr>
         </thead>
         <tbody>
-            @for(corda of modulo.cordas; track $index) {
+            @for(string of modulo.strings; track $index) {
             <tr>
                 <th scope="row">
-                    {{ corda.corda }}
+                    {{ string.string }}
                 </th>
-                @for(nota of corda.notas; track $index) {
+                @for(note of string.notes; track $index) {
                 <td [ngClass]="{
-                    'nota': nota !== ''
+                    'nota': note !== ''
                 }">
-                    {{ nota }}
+                    {{ note }}
                 </td>
                 }
             </tr>

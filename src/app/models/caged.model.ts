@@ -7,148 +7,148 @@ export class CAGED {
             case 'major':
                 this.shapes = [
                     new Shape('1º shape', ['8', '9', '10', '11', '12', '13'], [
-                        { corda: 'E', notas: ['', '', 'D', '', 'E', 'F'] },
-                        { corda: 'B', notas: ['', '', 'A', '', 'B', 'C'] },
-                        { corda: 'G', notas: ['', 'E', 'F', '', 'G', ''] },
-                        { corda: 'D', notas: ['', 'B', 'C', '', 'D', ''] },
-                        { corda: 'A', notas: ['F', '', 'G', '', 'A', ''] },
-                        { corda: 'E', notas: ['C', '', 'D', '', 'E', ''] }
+                        { string: 'E', notes: ['', '', 'D', '', 'E', 'F'] },
+                        { string: 'B', notes: ['', '', 'A', '', 'B', 'C'] },
+                        { string: 'G', notes: ['', 'E', 'F', '', 'G', ''] },
+                        { string: 'D', notes: ['', 'B', 'C', '', 'D', ''] },
+                        { string: 'A', notes: ['F', '', 'G', '', 'A', ''] },
+                        { string: 'E', notes: ['C', '', 'D', '', 'E', ''] }
                     ]),
                     new Shape('2º shape', ['10', '11', '12', '13', '14', '15'], [
-                        { corda: 'E', notas: ['', '', 'E', 'F', '', 'G'] },
-                        { corda: 'B', notas: ['', '', 'B', 'C', '', 'D'] },
-                        { corda: 'G', notas: ['F', '', 'G', '', 'A', ''] },
-                        { corda: 'D', notas: ['C', '', 'D', '', 'E', ''] },
-                        { corda: 'A', notas: ['G', '', 'A', '', 'B', ''] },
-                        { corda: 'E', notas: ['D', '', 'E', 'F', '', ''] }
+                        { string: 'E', notes: ['', '', 'E', 'F', '', 'G'] },
+                        { string: 'B', notes: ['', '', 'B', 'C', '', 'D'] },
+                        { string: 'G', notes: ['F', '', 'G', '', 'A', ''] },
+                        { string: 'D', notes: ['C', '', 'D', '', 'E', ''] },
+                        { string: 'A', notes: ['G', '', 'A', '', 'B', ''] },
+                        { string: 'E', notes: ['D', '', 'E', 'F', '', ''] }
                     ]),
                     new Shape('3º shape', ['12', '13', '14', '15', '16', '17'], [
-                        { corda: 'E', notas: ['', 'F', '', 'G', '', 'A'] },
-                        { corda: 'B', notas: ['', 'C', '', 'D', '', 'E'] },
-                        { corda: 'G', notas: ['G', '', 'A', '', 'B', ''] },
-                        { corda: 'D', notas: ['D', '', 'E', 'F', '', ''] },
-                        { corda: 'A', notas: ['A', '', 'B', 'C', '', ''] },
-                        { corda: 'E', notas: ['E', 'F', '', 'G', '', ''] }
+                        { string: 'E', notes: ['', 'F', '', 'G', '', 'A'] },
+                        { string: 'B', notes: ['', 'C', '', 'D', '', 'E'] },
+                        { string: 'G', notes: ['G', '', 'A', '', 'B', ''] },
+                        { string: 'D', notes: ['D', '', 'E', 'F', '', ''] },
+                        { string: 'A', notes: ['A', '', 'B', 'C', '', ''] },
+                        { string: 'E', notes: ['E', 'F', '', 'G', '', ''] }
                     ]),
                     new Shape('4º shape', ['1', '2', '3', '4', '5', '6', '7'], [
-                        { corda: 'E', notas: ['', '', 'G', '', 'A', '', 'B'] },
-                        { corda: 'B', notas: ['', '', 'D', '', 'E', 'F', ''] },
-                        { corda: 'G', notas: ['', 'A', '', 'B', 'C', '', ''] },
-                        { corda: 'D', notas: ['', 'E', 'F', '', 'G', '', ''] },
-                        { corda: 'A', notas: ['', 'B', 'C', '', 'D', '', ''] },
-                        { corda: 'E', notas: ['F', '', 'G', '', 'A', '', ''] }
+                        { string: 'E', notes: ['', '', 'G', '', 'A', '', 'B'] },
+                        { string: 'B', notes: ['', '', 'D', '', 'E', 'F', ''] },
+                        { string: 'G', notes: ['', 'A', '', 'B', 'C', '', ''] },
+                        { string: 'D', notes: ['', 'E', 'F', '', 'G', '', ''] },
+                        { string: 'A', notes: ['', 'B', 'C', '', 'D', '', ''] },
+                        { string: 'E', notes: ['F', '', 'G', '', 'A', '', ''] }
                     ]),
                     new Shape('5º shape', ['3', '4', '5', '6', '7', '8'], [
-                        { corda: 'E', notas: ['', '', 'A', '', 'B', 'C'] },
-                        { corda: 'B', notas: ['', '', 'E', 'F', '', 'G'] },
-                        { corda: 'G', notas: ['', 'B', 'C', '', 'D', ''] },
-                        { corda: 'D', notas: ['F', '', 'G', '', 'A', ''] },
-                        { corda: 'A', notas: ['C', '', 'D', '', 'E', ''] },
-                        { corda: 'E', notas: ['G', '', 'A', '', 'B', ''] }
+                        { string: 'E', notes: ['', '', 'A', '', 'B', 'C'] },
+                        { string: 'B', notes: ['', '', 'E', 'F', '', 'G'] },
+                        { string: 'G', notes: ['', 'B', 'C', '', 'D', ''] },
+                        { string: 'D', notes: ['F', '', 'G', '', 'A', ''] },
+                        { string: 'A', notes: ['C', '', 'D', '', 'E', ''] },
+                        { string: 'E', notes: ['G', '', 'A', '', 'B', ''] }
                     ]),
                     new Shape('6º shape', ['5', '6', '7', '8', '9', '10'], [
-                        { corda: 'E', notas: ['', '', 'B', 'C', '', 'D'] },
-                        { corda: 'B', notas: ['', 'F', '', 'G', '', 'A'] },
-                        { corda: 'G', notas: ['C', '', 'D', '', 'E', ''] },
-                        { corda: 'D', notas: ['G', '', 'A', '', 'B', ''] },
-                        { corda: 'A', notas: ['D', '', 'E', 'F', '', ''] },
-                        { corda: 'E', notas: ['A', '', 'B', 'C', '', ''] }
+                        { string: 'E', notes: ['', '', 'B', 'C', '', 'D'] },
+                        { string: 'B', notes: ['', 'F', '', 'G', '', 'A'] },
+                        { string: 'G', notes: ['C', '', 'D', '', 'E', ''] },
+                        { string: 'D', notes: ['G', '', 'A', '', 'B', ''] },
+                        { string: 'A', notes: ['D', '', 'E', 'F', '', ''] },
+                        { string: 'E', notes: ['A', '', 'B', 'C', '', ''] }
                     ]),
                     new Shape('7º shape', ['7', '8', '9', '10', '11', '12'], [
-                        { corda: 'E', notas: ['', 'C', '', 'D', '', 'E'] },
-                        { corda: 'B', notas: ['', 'G', '', 'A', '', 'B'] },
-                        { corda: 'G', notas: ['D', '', 'E', 'F', '', ''] },
-                        { corda: 'D', notas: ['A', '', 'B', 'C', '', ''] },
-                        { corda: 'A', notas: ['E', 'F', '', 'G', '', ''] },
-                        { corda: 'E', notas: ['B', 'C', '', 'D', '', ''] }
+                        { string: 'E', notes: ['', 'C', '', 'D', '', 'E'] },
+                        { string: 'B', notes: ['', 'G', '', 'A', '', 'B'] },
+                        { string: 'G', notes: ['D', '', 'E', 'F', '', ''] },
+                        { string: 'D', notes: ['A', '', 'B', 'C', '', ''] },
+                        { string: 'A', notes: ['E', 'F', '', 'G', '', ''] },
+                        { string: 'E', notes: ['B', 'C', '', 'D', '', ''] }
                     ])
                 ];
                 break;
             case 'penta':
                 this.shapes = [
                     new Shape('1º shape', ['5', '6', '7', '8'], [
-                        { corda: 'E', notas: ['A', '', '', 'C'] },
-                        { corda: 'B', notas: ['E', '', '', 'G'] },
-                        { corda: 'G', notas: ['C', '', 'D', ''] },
-                        { corda: 'D', notas: ['G', '', 'A', ''] },
-                        { corda: 'A', notas: ['D', '', 'E', ''] },
-                        { corda: 'E', notas: ['A', '', '', 'C'] }
+                        { string: 'E', notes: ['A', '', '', 'C'] },
+                        { string: 'B', notes: ['E', '', '', 'G'] },
+                        { string: 'G', notes: ['C', '', 'D', ''] },
+                        { string: 'D', notes: ['G', '', 'A', ''] },
+                        { string: 'A', notes: ['D', '', 'E', ''] },
+                        { string: 'E', notes: ['A', '', '', 'C'] }
                     ]),
                     new Shape('2º shape', ['7', '8', '9', '10'], [
-                        { corda: 'E', notas: ['', 'C', '', 'D'] },
-                        { corda: 'B', notas: ['', 'G', '', 'A'] },
-                        { corda: 'G', notas: ['D', '', 'E', ''] },
-                        { corda: 'D', notas: ['A', '', '', 'C'] },
-                        { corda: 'A', notas: ['E', '', '', 'G'] },
-                        { corda: 'E', notas: ['', 'C', '', 'D'] }
+                        { string: 'E', notes: ['', 'C', '', 'D'] },
+                        { string: 'B', notes: ['', 'G', '', 'A'] },
+                        { string: 'G', notes: ['D', '', 'E', ''] },
+                        { string: 'D', notes: ['A', '', '', 'C'] },
+                        { string: 'A', notes: ['E', '', '', 'G'] },
+                        { string: 'E', notes: ['', 'C', '', 'D'] }
                     ]),
                     new Shape('3º shape', ['9', '10', '11', '12', '13'], [
-                        { corda: 'E', notas: ['', 'D', '', 'E', ''] },
-                        { corda: 'B', notas: ['', 'A', '', '', 'C'] },
-                        { corda: 'G', notas: ['E', '', '', 'G', ''] },
-                        { corda: 'D', notas: ['', 'C', '', 'D', ''] },
-                        { corda: 'A', notas: ['', 'G', '', 'A', ''] },
-                        { corda: 'E', notas: ['', 'D', '', 'E', ''] }
+                        { string: 'E', notes: ['', 'D', '', 'E', ''] },
+                        { string: 'B', notes: ['', 'A', '', '', 'C'] },
+                        { string: 'G', notes: ['E', '', '', 'G', ''] },
+                        { string: 'D', notes: ['', 'C', '', 'D', ''] },
+                        { string: 'A', notes: ['', 'G', '', 'A', ''] },
+                        { string: 'E', notes: ['', 'D', '', 'E', ''] }
                     ]),
                     new Shape('4º shape', ['12', '13', '14', '15'], [
-                        { corda: 'E', notas: ['E', '', '', 'G'] },
-                        { corda: 'B', notas: ['', 'C', '', 'D'] },
-                        { corda: 'G', notas: ['G', '', 'A', ''] },
-                        { corda: 'D', notas: ['D', '', 'E', ''] },
-                        { corda: 'A', notas: ['A', '', '', 'C'] },
-                        { corda: 'E', notas: ['E', '', '', 'G'] }
+                        { string: 'E', notes: ['E', '', '', 'G'] },
+                        { string: 'B', notes: ['', 'C', '', 'D'] },
+                        { string: 'G', notes: ['G', '', 'A', ''] },
+                        { string: 'D', notes: ['D', '', 'E', ''] },
+                        { string: 'A', notes: ['A', '', '', 'C'] },
+                        { string: 'E', notes: ['E', '', '', 'G'] }
                     ]),
                     new Shape('5º shape', ['2', '3', '4', '5'], [
-                        { corda: 'E', notas: ['', 'G', '', 'A'] },
-                        { corda: 'B', notas: ['', 'D', '', 'E'] },
-                        { corda: 'G', notas: ['A', '', '', 'C'] },
-                        { corda: 'D', notas: ['E', '', '', 'G'] },
-                        { corda: 'A', notas: ['', 'C', '', 'D'] },
-                        { corda: 'E', notas: ['', 'G', '', 'A'] }
+                        { string: 'E', notes: ['', 'G', '', 'A'] },
+                        { string: 'B', notes: ['', 'D', '', 'E'] },
+                        { string: 'G', notes: ['A', '', '', 'C'] },
+                        { string: 'D', notes: ['E', '', '', 'G'] },
+                        { string: 'A', notes: ['', 'C', '', 'D'] },
+                        { string: 'E', notes: ['', 'G', '', 'A'] }
                     ]),
                 ];
                 break;
             case 'penta_blues':
                 this.shapes = [
                     new Shape('1º shape', ['5', '6', '7', '8'], [
-                        { corda: 'E', notas: ['A', '', '', 'C'] },
-                        { corda: 'B', notas: ['E', '', '', 'G'] },
-                        { corda: 'G', notas: ['C', '', 'D', 'D#'] },
-                        { corda: 'D', notas: ['G', '', 'A', ''] },
-                        { corda: 'A', notas: ['D', 'D#', 'E', ''] },
-                        { corda: 'E', notas: ['A', '', '', 'C'] }
+                        { string: 'E', notes: ['A', '', '', 'C'] },
+                        { string: 'B', notes: ['E', '', '', 'G'] },
+                        { string: 'G', notes: ['C', '', 'D', 'D#'] },
+                        { string: 'D', notes: ['G', '', 'A', ''] },
+                        { string: 'A', notes: ['D', 'D#', 'E', ''] },
+                        { string: 'E', notes: ['A', '', '', 'C'] }
                     ]),
                     new Shape('2º shape', ['7', '8', '9', '10', '11'], [
-                        { corda: 'E', notas: ['', 'C', '', 'D', 'D#'] },
-                        { corda: 'B', notas: ['', 'G', '', 'A', ''] },
-                        { corda: 'G', notas: ['D', 'D#', 'E', '', ''] },
-                        { corda: 'D', notas: ['A', '', '', 'C', ''] },
-                        { corda: 'A', notas: ['E', '', '', 'G', ''] },
-                        { corda: 'E', notas: ['', 'C', '', 'D', 'D#'] }
+                        { string: 'E', notes: ['', 'C', '', 'D', 'D#'] },
+                        { string: 'B', notes: ['', 'G', '', 'A', ''] },
+                        { string: 'G', notes: ['D', 'D#', 'E', '', ''] },
+                        { string: 'D', notes: ['A', '', '', 'C', ''] },
+                        { string: 'A', notes: ['E', '', '', 'G', ''] },
+                        { string: 'E', notes: ['', 'C', '', 'D', 'D#'] }
                     ]),
                     new Shape('3º shape', ['9', '10', '11', '12', '13'], [
-                        { corda: 'E', notas: ['', 'D', 'D#', 'E', ''] },
-                        { corda: 'B', notas: ['', 'A', '', '', 'C'] },
-                        { corda: 'G', notas: ['E', '', '', 'G', ''] },
-                        { corda: 'D', notas: ['', 'C', '', 'D', 'D#'] },
-                        { corda: 'A', notas: ['', 'G', '', 'A', ''] },
-                        { corda: 'E', notas: ['', 'D', 'D#', 'E', ''] }
+                        { string: 'E', notes: ['', 'D', 'D#', 'E', ''] },
+                        { string: 'B', notes: ['', 'A', '', '', 'C'] },
+                        { string: 'G', notes: ['E', '', '', 'G', ''] },
+                        { string: 'D', notes: ['', 'C', '', 'D', 'D#'] },
+                        { string: 'A', notes: ['', 'G', '', 'A', ''] },
+                        { string: 'E', notes: ['', 'D', 'D#', 'E', ''] }
                     ]),
                     new Shape('4º shape', ['12', '13', '14', '15', '16'], [
-                        { corda: 'E', notas: ['E', '', '', 'G', ''] },
-                        { corda: 'B', notas: ['', 'C', '', 'D', 'D#'] },
-                        { corda: 'G', notas: ['G', '', 'A', '', ''] },
-                        { corda: 'D', notas: ['D', 'D#', 'E', '', ''] },
-                        { corda: 'A', notas: ['A', '', '', 'C', ''] },
-                        { corda: 'E', notas: ['E', '', '', 'G', ''] }
+                        { string: 'E', notes: ['E', '', '', 'G', ''] },
+                        { string: 'B', notes: ['', 'C', '', 'D', 'D#'] },
+                        { string: 'G', notes: ['G', '', 'A', '', ''] },
+                        { string: 'D', notes: ['D', 'D#', 'E', '', ''] },
+                        { string: 'A', notes: ['A', '', '', 'C', ''] },
+                        { string: 'E', notes: ['E', '', '', 'G', ''] }
                     ]),
                     new Shape('5º shape', ['2', '3', '4', '5', '6'], [
-                        { corda: 'E', notas: ['', 'G', '', 'A', ''] },
-                        { corda: 'B', notas: ['', 'D', 'D#', 'E', ''] },
-                        { corda: 'G', notas: ['A', '', '', 'C', ''] },
-                        { corda: 'D', notas: ['E', '', '', 'G', ''] },
-                        { corda: 'A', notas: ['', 'C', '', 'D', 'D#'] },
-                        { corda: 'E', notas: ['', 'G', '', 'A', ''] }
+                        { string: 'E', notes: ['', 'G', '', 'A', ''] },
+                        { string: 'B', notes: ['', 'D', 'D#', 'E', ''] },
+                        { string: 'G', notes: ['A', '', '', 'C', ''] },
+                        { string: 'D', notes: ['E', '', '', 'G', ''] },
+                        { string: 'A', notes: ['', 'C', '', 'D', 'D#'] },
+                        { string: 'E', notes: ['', 'G', '', 'A', ''] }
                     ])
                 ];
                 break;

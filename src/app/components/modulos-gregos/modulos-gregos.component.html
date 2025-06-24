@@ -1,6 +1,6 @@
 <header>
     <h1>
-        Módulos gregos
+        C A G E D
     </h1>
 </header>
 <main>
@@ -27,7 +27,26 @@
             </label>
         </span>
     </fieldset>
-    @for(shape of caged(); track shape) {
+    <fieldset>
+        <legend>
+            Selecione a sua mão dominante:
+        </legend>
+        <span class="radio_option">
+            <input type="radio" id="right_handed_radio" name="dominant_hand" value="right_handed"
+                [(ngModel)]="dominantHand">
+            <label for="right_handed_radio">
+                Sou destro
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="left_handed_radio" name="dominant_hand" value="left_handed"
+                [(ngModel)]="dominantHand">
+            <label for="left_handed_radio">
+                Sou canhoto
+            </label>
+        </span>
+    </fieldset>
+    @for(shape of caged(); track $index) {
     <app-modulo [modulo]="shape" />
     }
 </main>
