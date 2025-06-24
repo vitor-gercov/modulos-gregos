@@ -2,13 +2,12 @@ import { Component, computed, model, ModelSignal, Signal, signal, WritableSignal
 import { ModuloComponent } from "../modulo/modulo.component";
 import { Modulo } from '../../models';
 import { FormsModule } from '@angular/forms';
-import { MatRadioModule } from '@angular/material/radio';
 import { ModulosGregos } from '../../models/modulos-gregos.model';
 
 
 @Component({
   selector: 'app-modulos-gregos',
-  imports: [ModuloComponent, MatRadioModule, FormsModule],
+  imports: [ModuloComponent, FormsModule],
   templateUrl: './modulos-gregos.component.html',
   styleUrl: './modulos-gregos.component.css'
 })

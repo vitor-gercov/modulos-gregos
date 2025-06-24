@@ -3,19 +3,12 @@
 
 html,
 body {
-    height: 100%;
-    background-color: rgb(54, 54, 54);
-    color: rgb(255, 255, 255);
+  height: 100%;
+  background-color: rgb(54, 54, 54);
+  color: rgb(255, 255, 255);
 }
 
 body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-:root {
-  @include mat.radio-overrides((
-    disabled-selected-icon-color: purple,
-    disabled-unselected-icon-color: black,
-  ));
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

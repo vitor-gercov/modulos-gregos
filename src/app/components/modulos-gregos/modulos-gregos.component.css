@@ -2,3 +2,15 @@ header,
 main {
     margin-inline: 1.5rem;
 }
+
+fieldset {
+    padding: 1.5rem;
+}
+
+.radio_option {
+    margin-right: 1rem;
+
+    * {
+        cursor: pointer;
+    }
+}
