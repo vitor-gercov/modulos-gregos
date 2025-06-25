@@ -1,0 +1,1 @@
+export type GuitarString = { guitarString: string; notes: string[] };

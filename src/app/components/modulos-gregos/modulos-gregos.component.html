@@ -29,6 +29,35 @@
     </fieldset>
     <fieldset>
         <legend>
+            Escolha entre cifras e/ou notas:
+        </legend>
+        <span class="radio_option">
+            <input type="radio" id="abc_radio" name="note_type" value="abc" [(ngModel)]="noteType">
+            <label for="abc_radio">
+                A B C...
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="lasido_radio" name="note_type" value="lasido" [(ngModel)]="noteType">
+            <label for="lasido_radio">
+                Lá Sí Dó...
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="abclasido_radio" name="note_type" value="abclasido" [(ngModel)]="noteType">
+            <label for="abclasido_radio">
+                A B C ... / Lá Sí Dó...
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="lasidoabc_radio" name="note_type" value="lasidoabc" [(ngModel)]="noteType">
+            <label for="lasidoabc_radio">
+                Lá Sí Dó... / A B C ...
+            </label>
+        </span>
+    </fieldset>
+    <fieldset>
+        <legend>
             Selecione a sua mão dominante:
         </legend>
         <span class="radio_option">

@@ -23,12 +23,12 @@
             </tr>
         </thead>
         <tbody>
-            @for(string of modulo.strings; track $index) {
+            @for(guitarString of modulo.guitarStrings; track $index) {
             <tr>
                 <th scope="row">
-                    {{ string.string }}
+                    {{ guitarString.guitarString }}
                 </th>
-                @for(note of string.notes; track $index) {
+                @for(note of guitarString.notes; track $index) {
                 <td [ngClass]="{
                     'nota': note !== ''
                 }">
