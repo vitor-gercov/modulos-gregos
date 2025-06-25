@@ -1,0 +1,16 @@
+<section class="cicle_of_fourths_section">
+    @for(note of notes; track $index) {
+    <div [ngStyle]="{
+        'rotate': $index * 30 + 'deg'
+    }">
+        <label [for]="inputId($index)">
+            {{ note }}
+        </label>
+        <input type="radio" [id]="inputId($index)" name="cicle_of_fourths" [value]="inputId($index)"
+            [(ngModel)]="fourthSelected" class="triangle_button">
+    </div>
+    }
+</section>
+<p>
+    Quarta selecionada: {{ fourthSelected() }}
+</p>

@@ -3,11 +3,16 @@ import { ModuloComponent } from "../modulo/modulo.component";
 import { Shape } from '../../models';
 import { FormsModule } from '@angular/forms';
 import { CAGED } from '../../models/caged.model';
+import { CicleOfFourthsComponent } from '../cicle-of-fourths/cicle-of-fourths.component';
 
 
 @Component({
   selector: 'app-modulos-gregos',
-  imports: [ModuloComponent, FormsModule],
+  imports: [
+    CicleOfFourthsComponent,
+    ModuloComponent,
+    FormsModule
+  ],
   templateUrl: './modulos-gregos.component.html',
   styleUrl: './modulos-gregos.component.css'
 })
