@@ -26,6 +26,23 @@ main {
 
 .radio_options {
     display: none;
+    grid-template-areas:
+        'scale'
+        'note-type'
+        'dominant-hand';
+
+    #scale_fieldset {
+        grid-area: scale;
+    }
+
+    #note_type_fieldset {
+        grid-area: note-type;
+
+    }
+
+    #dominant_hand_fieldset {
+        grid-area: dominant-hand;
+    }
 }
 
 fieldset {
@@ -47,6 +64,21 @@ fieldset {
     }
 
     .radio_options {
-        display: block;
+        display: grid;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .radio_options {
+        grid-template-areas:
+            'scale note-type'
+            'dominant-hand note-type';
+        column-gap: 1.5rem;
+    }
+
+    #note_type_fieldset {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 }
