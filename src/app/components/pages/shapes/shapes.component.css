@@ -1,0 +1,52 @@
+main {
+    margin-inline: 1.5rem;
+}
+
+.select_options {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        margin-bottom: .5rem;
+    }
+
+    select {
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+        border-radius: .5rem;
+        padding: .5rem 1rem;
+        margin-bottom: 1.5rem;
+
+        option {
+            color: black;
+        }
+    }
+}
+
+.radio_options {
+    display: none;
+}
+
+fieldset {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.radio_option {
+    margin-right: 1rem;
+
+    * {
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .select_options {
+        display: none;
+    }
+
+    .radio_options {
+        display: block;
+    }
+}

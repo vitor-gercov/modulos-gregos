@@ -1,22 +1,22 @@
 import { Component, computed, model, ModelSignal, Signal } from '@angular/core';
-import { ModuloComponent } from "../modulo/modulo.component";
-import { Shape } from '../../models';
+import { Shape } from '../../../models';
 import { FormsModule } from '@angular/forms';
-import { CAGED } from '../../models/caged.model';
+import { CAGED } from '../../../models/caged.model';
 import { CicleOfFourthsComponent } from '../cicle-of-fourths/cicle-of-fourths.component';
+import { ShapeComponent } from 'app/components/shape/shape.component';
 
 
 @Component({
-  selector: 'app-modulos-gregos',
+  selector: 'app-shapes',
   imports: [
     CicleOfFourthsComponent,
-    ModuloComponent,
+    ShapeComponent,
     FormsModule
   ],
-  templateUrl: './modulos-gregos.component.html',
-  styleUrl: './modulos-gregos.component.css'
+  templateUrl: './shapes.component.html',
+  styleUrl: './shapes.component.css'
 })
-export class ModulosGregosComponent {
+export class ShapesComponent {
   scaleSelected: ModelSignal<string> = model<string>('major');
   dominantHand: ModelSignal<string> = model<string>('right_handed');
   noteType: ModelSignal<string> = model<string>('abc');

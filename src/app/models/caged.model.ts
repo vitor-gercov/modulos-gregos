@@ -29,6 +29,12 @@ export class CAGED {
             lasidoabc: 'Ré / D'
         },
         {
+            abc: 'D#',
+            lasido: 'Ré#',
+            abclasido: 'D# / Ré#',
+            lasidoabc: 'Ré# / D#'
+        },
+        {
             abc: 'E',
             lasido: 'Mi',
             abclasido: 'E / Mi',

@@ -1,17 +1,16 @@
-import { NgStyle } from '@angular/common';
-import { Component, model, ModelSignal } from '@angular/core';
+import { Component, ElementRef, model, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cicle-of-fourths',
   imports: [
-    NgStyle,
     FormsModule
   ],
   templateUrl: './cicle-of-fourths.component.html',
   styleUrl: './cicle-of-fourths.component.css'
 })
 export class CicleOfFourthsComponent {
+  canvasElementRef = viewChild.required<ElementRef<HTMLCanvasElement>>('canvas');
   notes = [
     'C',
     'G',
@@ -26,8 +25,7 @@ export class CicleOfFourthsComponent {
     'A#',
     'F'
   ];
-
-  fourthSelected: ModelSignal<string> = model<string>('roote_note');
+  fourthSelected = model<string>('root_note');
 
   inputId(noteIndex: number): string {
     return noteIndex === 0 ? 'roote_note' : `${noteIndex + 1}_fourth`;

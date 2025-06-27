@@ -1,9 +1,19 @@
 import { Routes } from '@angular/router';
-import { ModulosGregosComponent } from './components/modulos-gregos/modulos-gregos.component';
+import { ShapesComponent } from './components/pages/shapes/shapes.component';
+import { CicleOfFourthsComponent } from './components/pages/cicle-of-fourths/cicle-of-fourths.component';
 
 export const routes: Routes = [
     {
         path: '',
-        component: ModulosGregosComponent
+        redirectTo: 'caged',
+        pathMatch: 'full'
+    },
+    {
+        path: 'caged',
+        component: ShapesComponent
+    },
+    {
+        path: 'cicle-of-fourths',
+        component: CicleOfFourthsComponent
     }
 ];
