@@ -1,7 +1,3 @@
-main {
-    margin-inline: 1.5rem;
-}
-
 .select_options {
     display: flex;
     flex-direction: column;
@@ -43,11 +39,6 @@ main {
     #dominant_hand_fieldset {
         grid-area: dominant-hand;
     }
-}
-
-fieldset {
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
 }
 
 .radio_option {

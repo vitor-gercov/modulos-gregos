@@ -12,3 +12,12 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+fieldset {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+input[type="radio"]+label {
+  cursor: pointer;
+}

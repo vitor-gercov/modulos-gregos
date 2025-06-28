@@ -1,16 +1,19 @@
-<!-- <section class="cicle_of_fourths_section">
-    @for(note of notes; track $index) {
-    <div [ngStyle]="{
-        'rotate': $index * 30 + 'deg'
-    }">
-        <label [for]="inputId($index)">
-            {{ note }}
-        </label>
-        <input type="radio" [id]="inputId($index)" name="cicle_of_fourths" [value]="inputId($index)"
-            [(ngModel)]="fourthSelected" class="triangle_button">
-    </div>
-    }
-</section>
-<p>
-    Quarta selecionada: {{ fourthSelected() }}
-</p> -->
+<fieldset>
+    <legend>
+        Escolha qual quarta você quer estudar:
+    </legend>
+    <section class="cicle_of_fourths_section">
+        @for(note of notes; track $index) {
+        <div>
+            <input type="radio" [id]="inputId($index)" name="cicle_of_fourths" [value]="inputId($index)"
+                [(ngModel)]="fourthSelected" class="triangle_button">
+            <label [for]="inputId($index)">
+                {{ note }}
+            </label>
+        </div>
+        }
+    </section>
+</fieldset>
+@for (shape of shapes(); track $index) {
+<app-shape [shape]="shape" />
+}

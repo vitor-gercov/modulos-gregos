@@ -1,58 +1,10 @@
 import { GuitarString } from "@types";
 import { Shape } from "./shape.model";
+import { NOTE_TYPE_RELATIONS } from "app/consts";
 
 export class CAGED {
     shapes: Shape[] = [];
-    private noteTypeRelations = [
-        {
-            abc: 'A',
-            lasido: 'Lá',
-            abclasido: 'A / Lá',
-            lasidoabc: 'Lá / A'
-        },
-        {
-            abc: 'B',
-            lasido: 'Sí',
-            abclasido: 'B / Sí',
-            lasidoabc: 'Sí / B'
-        },
-        {
-            abc: 'C',
-            lasido: 'Dó',
-            abclasido: 'C / Dó',
-            lasidoabc: 'Dó / C'
-        },
-        {
-            abc: 'D',
-            lasido: 'Ré',
-            abclasido: 'D / Ré',
-            lasidoabc: 'Ré / D'
-        },
-        {
-            abc: 'D#',
-            lasido: 'Ré#',
-            abclasido: 'D# / Ré#',
-            lasidoabc: 'Ré# / D#'
-        },
-        {
-            abc: 'E',
-            lasido: 'Mi',
-            abclasido: 'E / Mi',
-            lasidoabc: 'Mi / E'
-        },
-        {
-            abc: 'F',
-            lasido: 'Fá',
-            abclasido: 'F / Fá',
-            lasidoabc: 'Fá / F'
-        },
-        {
-            abc: 'G',
-            lasido: 'Sol',
-            abclasido: 'G / Sol',
-            lasidoabc: 'Sol / G'
-        }
-    ];
+    private noteTypeRelations = NOTE_TYPE_RELATIONS;
 
     constructor(
         private scale: string = 'major',

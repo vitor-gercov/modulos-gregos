@@ -1,105 +1,102 @@
-<main>
-    <app-cicle-of-fourths></app-cicle-of-fourths>
-    <section class="select_options">
-        <label for="scale_select">
+<section class="select_options">
+    <label for="scale_select">
+        Escolha qual escala você quer estudar:
+    </label>
+    <select name="scale" id="scale_select" [(ngModel)]="scaleSelected">
+        <option value="major" selected>Maior</option>
+        <option value="penta">Penta</option>
+        <option value="penta_blues">Penta Blues</option>
+    </select>
+    <label for="note_type_select">
+        Escolha entre cifras e/ou notas:
+    </label>
+    <select name="scale" id="note_type_select" [(ngModel)]="noteType">
+        <option value="abc" selected>A B C...</option>
+        <option value="lasido">Lá Sí Dó...</option>
+        <option value="abclasido">A B C... / Lá Sí Dó...</option>
+        <option value="lasidoabc">Lá Sí Dó... / A B C...</option>
+    </select>
+    <label for="dominant_hand_select">
+        Selecione a sua mão dominante:
+    </label>
+    <select name="scale" id="dominant_hand_select" [(ngModel)]="dominantHand">
+        <option value="right_handed" selected><span aria-hidden="true">👉</span> Sou destro</option>
+        <option value="left_handed"><span aria-hidden="true">👈</span> Sou canhoto</option>
+    </select>
+</section>
+<section class="radio_options">
+    <fieldset id="scale_fieldset">
+        <legend>
             Escolha qual escala você quer estudar:
-        </label>
-        <select name="scale" id="scale_select" [(ngModel)]="scaleSelected">
-            <option value="major" selected>Maior</option>
-            <option value="penta">Penta</option>
-            <option value="penta_blues">Penta Blues</option>
-        </select>
-        <label for="note_type_select">
+        </legend>
+        <span class="radio_option">
+            <input type="radio" id="major_radio" name="scale" value="major" [(ngModel)]="scaleSelected">
+            <label for="major_radio">
+                Maior
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="penta_radio" name="scale" value="penta" [(ngModel)]="scaleSelected">
+            <label for="penta_radio">
+                Penta
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="penta_blues_radio" name="scale" value="penta_blues" [(ngModel)]="scaleSelected">
+            <label for="penta_blues_radio">
+                Penta Blues
+            </label>
+        </span>
+    </fieldset>
+    <fieldset id="note_type_fieldset">
+        <legend>
             Escolha entre cifras e/ou notas:
-        </label>
-        <select name="scale" id="note_type_select" [(ngModel)]="noteType">
-            <option value="abc" selected>A B C...</option>
-            <option value="lasido">Lá Sí Dó...</option>
-            <option value="abclasido">A B C... / Lá Sí Dó...</option>
-            <option value="lasidoabc">Lá Sí Dó... / A B C...</option>
-        </select>
-        <label for="dominant_hand_select">
+        </legend>
+        <span class="radio_option">
+            <input type="radio" id="abc_radio" name="note_type" value="abc" [(ngModel)]="noteType">
+            <label for="abc_radio">
+                A B C...
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="lasido_radio" name="note_type" value="lasido" [(ngModel)]="noteType">
+            <label for="lasido_radio">
+                Lá Sí Dó...
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="abclasido_radio" name="note_type" value="abclasido" [(ngModel)]="noteType">
+            <label for="abclasido_radio">
+                A B C ... / Lá Sí Dó...
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="lasidoabc_radio" name="note_type" value="lasidoabc" [(ngModel)]="noteType">
+            <label for="lasidoabc_radio">
+                Lá Sí Dó... / A B C ...
+            </label>
+        </span>
+    </fieldset>
+    <fieldset id="dominant_hand_fieldset">
+        <legend>
             Selecione a sua mão dominante:
-        </label>
-        <select name="scale" id="dominant_hand_select" [(ngModel)]="dominantHand">
-            <option value="right_handed" selected><span aria-hidden="true">👉</span> Sou destro</option>
-            <option value="left_handed"><span aria-hidden="true">👈</span> Sou canhoto</option>
-        </select>
-    </section>
-    <section class="radio_options">
-        <fieldset id="scale_fieldset">
-            <legend>
-                Escolha qual escala você quer estudar:
-            </legend>
-            <span class="radio_option">
-                <input type="radio" id="major_radio" name="scale" value="major" [(ngModel)]="scaleSelected">
-                <label for="major_radio">
-                    Maior
-                </label>
-            </span>
-            <span class="radio_option">
-                <input type="radio" id="penta_radio" name="scale" value="penta" [(ngModel)]="scaleSelected">
-                <label for="penta_radio">
-                    Penta
-                </label>
-            </span>
-            <span class="radio_option">
-                <input type="radio" id="penta_blues_radio" name="scale" value="penta_blues" [(ngModel)]="scaleSelected">
-                <label for="penta_blues_radio">
-                    Penta Blues
-                </label>
-            </span>
-        </fieldset>
-        <fieldset id="note_type_fieldset">
-            <legend>
-                Escolha entre cifras e/ou notas:
-            </legend>
-            <span class="radio_option">
-                <input type="radio" id="abc_radio" name="note_type" value="abc" [(ngModel)]="noteType">
-                <label for="abc_radio">
-                    A B C...
-                </label>
-            </span>
-            <span class="radio_option">
-                <input type="radio" id="lasido_radio" name="note_type" value="lasido" [(ngModel)]="noteType">
-                <label for="lasido_radio">
-                    Lá Sí Dó...
-                </label>
-            </span>
-            <span class="radio_option">
-                <input type="radio" id="abclasido_radio" name="note_type" value="abclasido" [(ngModel)]="noteType">
-                <label for="abclasido_radio">
-                    A B C ... / Lá Sí Dó...
-                </label>
-            </span>
-            <span class="radio_option">
-                <input type="radio" id="lasidoabc_radio" name="note_type" value="lasidoabc" [(ngModel)]="noteType">
-                <label for="lasidoabc_radio">
-                    Lá Sí Dó... / A B C ...
-                </label>
-            </span>
-        </fieldset>
-        <fieldset id="dominant_hand_fieldset">
-            <legend>
-                Selecione a sua mão dominante:
-            </legend>
-            <span class="radio_option">
-                <input type="radio" id="right_handed_radio" name="dominant_hand" value="right_handed"
-                    [(ngModel)]="dominantHand">
-                <label for="right_handed_radio">
-                    <span aria-hidden="true">👉</span> Sou destro
-                </label>
-            </span>
-            <span class="radio_option">
-                <input type="radio" id="left_handed_radio" name="dominant_hand" value="left_handed"
-                    [(ngModel)]="dominantHand">
-                <label for="left_handed_radio">
-                    <span aria-hidden="true">👈</span> Sou canhoto
-                </label>
-            </span>
-        </fieldset>
-    </section>
-    @for(shape of caged(); track $index) {
-    <app-shape [shape]="shape" />
-    }
-</main>
+        </legend>
+        <span class="radio_option">
+            <input type="radio" id="right_handed_radio" name="dominant_hand" value="right_handed"
+                [(ngModel)]="dominantHand">
+            <label for="right_handed_radio">
+                <span aria-hidden="true">👉</span> Sou destro
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="left_handed_radio" name="dominant_hand" value="left_handed"
+                [(ngModel)]="dominantHand">
+            <label for="left_handed_radio">
+                <span aria-hidden="true">👈</span> Sou canhoto
+            </label>
+        </span>
+    </fieldset>
+</section>
+@for(shape of caged(); track $index) {
+<app-shape [shape]="shape" />
+}

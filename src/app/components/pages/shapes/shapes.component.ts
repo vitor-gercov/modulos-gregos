@@ -2,14 +2,12 @@ import { Component, computed, model, ModelSignal, Signal } from '@angular/core';
 import { Shape } from '../../../models';
 import { FormsModule } from '@angular/forms';
 import { CAGED } from '../../../models/caged.model';
-import { CicleOfFourthsComponent } from '../cicle-of-fourths/cicle-of-fourths.component';
 import { ShapeComponent } from 'app/components/shape/shape.component';
 
 
 @Component({
   selector: 'app-shapes',
   imports: [
-    CicleOfFourthsComponent,
     ShapeComponent,
     FormsModule
   ],
