@@ -15,6 +15,7 @@
         </label>
     </span>
 </fieldset>
+<app-dominant-hand-filter [(dominantHand)]="dominantHand"></app-dominant-hand-filter>
 @for (shape of shapes(); track $index) {
 <app-shape [shape]="shape" />
 }

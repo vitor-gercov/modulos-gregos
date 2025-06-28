@@ -21,3 +21,16 @@ fieldset {
 input[type="radio"]+label {
   cursor: pointer;
 }
+
+select {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: .5rem;
+  padding: .5rem 1rem;
+  margin-bottom: 1.5rem;
+
+  option {
+    color: black;
+  }
+}

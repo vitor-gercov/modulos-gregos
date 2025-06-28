@@ -16,13 +16,6 @@
         <option value="abclasido">A B C... / Lá Sí Dó...</option>
         <option value="lasidoabc">Lá Sí Dó... / A B C...</option>
     </select>
-    <label for="dominant_hand_select">
-        Selecione a sua mão dominante:
-    </label>
-    <select name="scale" id="dominant_hand_select" [(ngModel)]="dominantHand">
-        <option value="right_handed" selected><span aria-hidden="true">👉</span> Sou destro</option>
-        <option value="left_handed"><span aria-hidden="true">👈</span> Sou canhoto</option>
-    </select>
 </section>
 <section class="radio_options">
     <fieldset id="scale_fieldset">
@@ -77,26 +70,8 @@
             </label>
         </span>
     </fieldset>
-    <fieldset id="dominant_hand_fieldset">
-        <legend>
-            Selecione a sua mão dominante:
-        </legend>
-        <span class="radio_option">
-            <input type="radio" id="right_handed_radio" name="dominant_hand" value="right_handed"
-                [(ngModel)]="dominantHand">
-            <label for="right_handed_radio">
-                <span aria-hidden="true">👉</span> Sou destro
-            </label>
-        </span>
-        <span class="radio_option">
-            <input type="radio" id="left_handed_radio" name="dominant_hand" value="left_handed"
-                [(ngModel)]="dominantHand">
-            <label for="left_handed_radio">
-                <span aria-hidden="true">👈</span> Sou canhoto
-            </label>
-        </span>
-    </fieldset>
 </section>
+<app-dominant-hand-filter [(dominantHand)]="dominantHand"></app-dominant-hand-filter>
 @for(shape of caged(); track $index) {
 <app-shape [shape]="shape" />
 }
