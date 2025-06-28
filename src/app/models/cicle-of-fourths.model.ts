@@ -7,19 +7,17 @@ export class CicleOfFourths {
     private noteTypeRelations = NOTE_TYPE_RELATIONS;
 
     constructor(
-        private scale: string = 'penta',
+        private shape: string = 'shape 1',
         private dominantHand: string = 'right_handed',
-        private noteType: string = 'abc'
+        private noteType: string = 'abc',
+        private scale: string = 'penta',
     ) {
         this.setShapes();
     }
 
     private setShapes(): void {
-        switch (this.scale) {
-            case 'major':
-                this.shapes = [];
-                break;
-            case 'penta':
+        switch (this.shape) {
+            case 'shape_1':
                 this.shapes = [
                     new Shape('C', ['5', '6', '7', '8', '9', '10', '11', '12', '13'], [
                         { guitarString: 'E', notes: ['', '', '', '', '', 'D', '', 'E', ''] },
@@ -28,54 +26,135 @@ export class CicleOfFourths {
                         { guitarString: 'D', notes: ['', '', 'A', '', '', 'C', '', '', ''] },
                         { guitarString: 'A', notes: ['D', '', 'E', '', '', '', '', '', ''] },
                         { guitarString: 'E', notes: ['A', '', '', 'C', '', '', '', '', ''] }
+                    ]),
+                    new Shape('F', ['10', '11', '12', '13', '14', '15', '16', '17', '18'], [
+                        { guitarString: 'E', notes: ['', '', '', '', '', 'G', '', 'A', ''] },
+                        { guitarString: 'B', notes: ['', '', '', '', '', 'D', '', '', 'F'] },
+                        { guitarString: 'G', notes: ['', '', 'G', '', 'A', '', '', '', ''] },
+                        { guitarString: 'D', notes: ['', '', 'D', '', '', 'F', '', '', ''] },
+                        { guitarString: 'A', notes: ['G', '', 'A', '', '', '', '', '', ''] },
+                        { guitarString: 'E', notes: ['D', '', '', 'F', '', '', '', '', ''] }
+                    ]),
+                    new Shape('Bb', ['3', '4', '5', '6', '7', '8', '9', '10', '11'], [
+                        { guitarString: 'E', notes: ['', '', '', '', '', 'C', '', 'D', ''] },
+                        { guitarString: 'B', notes: ['', '', '', '', '', 'G', '', '', 'Bb'] },
+                        { guitarString: 'G', notes: ['', '', 'C', '', 'D', '', '', '', ''] },
+                        { guitarString: 'D', notes: ['', '', 'G', '', '', 'Bb', '', '', ''] },
+                        { guitarString: 'A', notes: ['C', '', 'D', '', '', '', '', '', ''] },
+                        { guitarString: 'E', notes: ['G', '', '', 'Bb', '', '', '', '', ''] }
+                    ]),
+                    new Shape('Eb', ['8', '9', '10', '11', '12', '13', '14', '15', '16'], [
+                        { guitarString: 'E', notes: ['', '', '', '', '', 'F', '', 'G', ''] },
+                        { guitarString: 'B', notes: ['', '', '', '', '', 'C', '', '', 'Eb'] },
+                        { guitarString: 'G', notes: ['', '', 'F', '', 'G', '', '', '', ''] },
+                        { guitarString: 'D', notes: ['', '', 'C', '', '', 'Eb', '', '', ''] },
+                        { guitarString: 'A', notes: ['F', '', 'G', '', '', '', '', '', ''] },
+                        { guitarString: 'E', notes: ['C', '', '', 'Eb', '', '', '', '', ''] }
+                    ]),
+                    new Shape('Ab', ['1', '2', '3', '4', '5', '6', '7', '8', '9'], [
+                        { guitarString: 'E', notes: ['', '', '', '', '', 'Bb', '', 'C', ''] },
+                        { guitarString: 'B', notes: ['', '', '', '', '', 'F', '', '', 'Ab'] },
+                        { guitarString: 'G', notes: ['', '', 'Bb', '', 'C', '', '', '', ''] },
+                        { guitarString: 'D', notes: ['', '', 'F', '', '', 'Ab', '', '', ''] },
+                        { guitarString: 'A', notes: ['Bb', '', 'C', '', '', '', '', '', ''] },
+                        { guitarString: 'E', notes: ['F', '', '', 'Ab', '', '', '', '', ''] }
+                    ]),
+                    new Shape('Db', ['6', '7', '8', '9', '10', '11', '12', '13', '14'], [
+                        { guitarString: 'E', notes: ['', '', '', '', '', 'Eb', '', 'F', ''] },
+                        { guitarString: 'B', notes: ['', '', '', '', '', 'Bb', '', '', 'Db'] },
+                        { guitarString: 'G', notes: ['', '', 'Eb', '', 'F', '', '', '', ''] },
+                        { guitarString: 'D', notes: ['', '', 'Bb', '', '', 'Db', '', '', ''] },
+                        { guitarString: 'A', notes: ['Eb', '', 'F', '', '', '', '', '', ''] },
+                        { guitarString: 'E', notes: ['Bb', '', '', 'Db', '', '', '', '', ''] }
+                    ]),
+                    new Shape('Gb', ['11', '12', '13', '14', '15', '16', '17', '18', '19'], [
+                        { guitarString: 'E', notes: ['', '', '', '', '', 'Ab', '', 'Bb', ''] },
+                        { guitarString: 'B', notes: ['', '', '', '', '', 'Eb', '', '', 'Gb'] },
+                        { guitarString: 'G', notes: ['', '', 'Ab', '', 'Bb', '', '', '', ''] },
+                        { guitarString: 'D', notes: ['', '', 'Eb', '', '', 'Gb', '', '', ''] },
+                        { guitarString: 'A', notes: ['Ab', '', 'Bb', '', '', '', '', '', ''] },
+                        { guitarString: 'E', notes: ['Eb', '', '', 'Gb', '', '', '', '', ''] }
+                    ]),
+                    new Shape('Cb', ['4', '5', '6', '7', '8', '9', '10', '11', '12'], [
+                        { guitarString: 'E', notes: ['', '', '', '', '', 'Db', '', 'Eb', ''] },
+                        { guitarString: 'B', notes: ['', '', '', '', '', 'Ab', '', '', 'Cb'] },
+                        { guitarString: 'G', notes: ['', '', 'Db', '', 'Eb', '', '', '', ''] },
+                        { guitarString: 'D', notes: ['', '', 'Ab', '', '', 'Cb', '', '', ''] },
+                        { guitarString: 'A', notes: ['Db', '', 'Eb', '', '', '', '', '', ''] },
+                        { guitarString: 'E', notes: ['Ab', '', '', 'Cb', '', '', '', '', ''] }
                     ])
-                    // new Shape('C', ['5', '6', '7', '8', '9', '10', '11', '12', '13'], [
-                    //     { guitarString: 'E', notes: ['A', '', '', 'C', '', 'D', '', 'E', ''] },
-                    //     { guitarString: 'B', notes: ['E', '', '', 'G', '', 'A', '', '', 'C'] },
-                    //     { guitarString: 'G', notes: ['', '', 'D', '', 'E', '', '', '', ''] },
-                    //     { guitarString: 'D', notes: ['', '', 'A', '', '', 'C', '', '', ''] },
-                    //     { guitarString: 'A', notes: ['D', '', 'E', '', '', '', '', '', ''] },
-                    //     { guitarString: 'E', notes: ['A', '', '', 'C', '', '', '', '', ''] }
-                    // ]),
-                    // new Shape('2º shape', ['7', '8', '9', '10'], [
-                    //     { guitarString: 'E', notes: ['', 'C', '', 'D'] },
-                    //     { guitarString: 'B', notes: ['', 'G', '', 'A'] },
-                    //     { guitarString: 'G', notes: ['D', '', 'E', ''] },
-                    //     { guitarString: 'D', notes: ['A', '', '', 'C'] },
-                    //     { guitarString: 'A', notes: ['E', '', '', 'G'] },
-                    //     { guitarString: 'E', notes: ['', 'C', '', 'D'] }
-                    // ]),
-                    // new Shape('3º shape', ['9', '10', '11', '12', '13'], [
-                    //     { guitarString: 'E', notes: ['', 'D', '', 'E', ''] },
-                    //     { guitarString: 'B', notes: ['', 'A', '', '', 'C'] },
-                    //     { guitarString: 'G', notes: ['E', '', '', 'G', ''] },
-                    //     { guitarString: 'D', notes: ['', 'C', '', 'D', ''] },
-                    //     { guitarString: 'A', notes: ['', 'G', '', 'A', ''] },
-                    //     { guitarString: 'E', notes: ['', 'D', '', 'E', ''] }
-                    // ]),
-                    // new Shape('4º shape', ['12', '13', '14', '15'], [
-                    //     { guitarString: 'E', notes: ['E', '', '', 'G'] },
-                    //     { guitarString: 'B', notes: ['', 'C', '', 'D'] },
-                    //     { guitarString: 'G', notes: ['G', '', 'A', ''] },
-                    //     { guitarString: 'D', notes: ['D', '', 'E', ''] },
-                    //     { guitarString: 'A', notes: ['A', '', '', 'C'] },
-                    //     { guitarString: 'E', notes: ['E', '', '', 'G'] }
-                    // ]),
-                    // new Shape('5º shape', ['2', '3', '4', '5'], [
-                    //     { guitarString: 'E', notes: ['', 'G', '', 'A'] },
-                    //     { guitarString: 'B', notes: ['', 'D', '', 'E'] },
-                    //     { guitarString: 'G', notes: ['A', '', '', 'C'] },
-                    //     { guitarString: 'D', notes: ['E', '', '', 'G'] },
-                    //     { guitarString: 'A', notes: ['', 'C', '', 'D'] },
-                    //     { guitarString: 'E', notes: ['', 'G', '', 'A'] }
-                    // ]),
                 ];
                 break;
-            case 'penta_blues':
-                this.shapes = [];
+            case 'shape_5':
+                this.shapes = [
+                    new Shape('C', ['3', '4', '5', '6', '7', '8', '9', '10'], [
+                        { guitarString: 'E', notes: ['', '', '', '', '', 'C', '', 'D'] },
+                        { guitarString: 'B', notes: ['', '', '', '', '', 'G', '', 'A'] },
+                        { guitarString: 'G', notes: ['', '', 'C', '', 'D', '', '', ''] },
+                        { guitarString: 'D', notes: ['', '', 'G', '', 'A', '', '', ''] },
+                        { guitarString: 'A', notes: ['C', '', 'D', '', '', '', '', ''] },
+                        { guitarString: 'E', notes: ['G', '', 'A', '', '', '', '', ''] }
+                    ]),
+                    new Shape('F', ['8', '9', '10', '11', '12', '13', '14', '15'], [
+                        { guitarString: 'E', notes: ['', '', '', '', '', 'F', '', 'G'] },
+                        { guitarString: 'B', notes: ['', '', '', '', '', 'C', '', 'D'] },
+                        { guitarString: 'G', notes: ['', '', 'F', '', 'G', '', '', ''] },
+                        { guitarString: 'D', notes: ['', '', 'C', '', 'D', '', '', ''] },
+                        { guitarString: 'A', notes: ['F', '', 'G', '', '', '', '', ''] },
+                        { guitarString: 'E', notes: ['C', '', 'D', '', '', '', '', ''] }
+                    ]),
+                    new Shape('Bb', ['1', '2', '3', '4', '5', '6', '7', '8'], [
+                        { guitarString: 'E', notes: ['', '', '', '', '', 'Bb', '', 'C'] },
+                        { guitarString: 'B', notes: ['', '', '', '', '', 'F', '', 'G'] },
+                        { guitarString: 'G', notes: ['', '', 'Bb', '', 'C', '', '', ''] },
+                        { guitarString: 'D', notes: ['', '', 'F', '', 'G', '', '', ''] },
+                        { guitarString: 'A', notes: ['Bb', '', 'C', '', '', '', '', ''] },
+                        { guitarString: 'E', notes: ['F', '', 'G', '', '', '', '', ''] }
+                    ]),
+                    new Shape('Eb', ['6', '7', '8', '9', '10', '11', '12', '13'], [
+                        { guitarString: 'E', notes: ['', '', '', '', '', 'Eb', '', 'F'] },
+                        { guitarString: 'B', notes: ['', '', '', '', '', 'Bb', '', 'C'] },
+                        { guitarString: 'G', notes: ['', '', 'Eb', '', 'F', '', '', ''] },
+                        { guitarString: 'D', notes: ['', '', 'Bb', '', 'C', '', '', ''] },
+                        { guitarString: 'A', notes: ['Eb', '', 'F', '', '', '', '', ''] },
+                        { guitarString: 'E', notes: ['Bb', '', 'C', '', '', '', '', ''] }
+                    ]),
+                    new Shape('Ab', ['10', '11', '12', '13', '14', '15', '16', '17'], [
+                        { guitarString: 'E', notes: ['', '', '', '', '', 'Ab', '', 'Bb'] },
+                        { guitarString: 'B', notes: ['', '', '', '', '', 'Eb', '', 'F'] },
+                        { guitarString: 'G', notes: ['', '', 'Ab', '', 'Bb', '', '', ''] },
+                        { guitarString: 'D', notes: ['', '', 'Eb', '', 'F', '', '', ''] },
+                        { guitarString: 'A', notes: ['Ab', '', 'Bb', '', '', '', '', ''] },
+                        { guitarString: 'E', notes: ['Eb', '', 'F', '', '', '', '', ''] }
+                    ]),
+                    new Shape('Db', ['4', '5', '6', '7', '8', '9', '10', '11'], [
+                        { guitarString: 'E', notes: ['', '', '', '', '', 'Db', '', 'Eb'] },
+                        { guitarString: 'B', notes: ['', '', '', '', '', 'Ab', '', 'Bb'] },
+                        { guitarString: 'G', notes: ['', '', 'Db', '', 'Eb', '', '', ''] },
+                        { guitarString: 'D', notes: ['', '', 'Ab', '', 'Bb', '', '', ''] },
+                        { guitarString: 'A', notes: ['Db', '', 'Eb', '', '', '', '', ''] },
+                        { guitarString: 'E', notes: ['Ab', '', 'Bb', '', '', '', '', ''] }
+                    ]),
+                    new Shape('Gb', ['9', '10', '11', '12', '13', '14', '15', '16'], [
+                        { guitarString: 'E', notes: ['', '', '', '', '', 'Gb', '', 'Ab'] },
+                        { guitarString: 'B', notes: ['', '', '', '', '', 'Db', '', 'Eb'] },
+                        { guitarString: 'G', notes: ['', '', 'Gb', '', 'Ab', '', '', ''] },
+                        { guitarString: 'D', notes: ['', '', 'Db', '', 'Eb', '', '', ''] },
+                        { guitarString: 'A', notes: ['Gb', '', 'Ab', '', '', '', '', ''] },
+                        { guitarString: 'E', notes: ['Db', '', 'Eb', '', '', '', '', ''] }
+                    ]),
+                    new Shape('Cb', ['2', '3', '4', '5', '6', '7', '8', '9'], [
+                        { guitarString: 'E', notes: ['', '', '', '', '', 'Cb', '', 'Db'] },
+                        { guitarString: 'B', notes: ['', '', '', '', '', 'Gb', '', 'Ab'] },
+                        { guitarString: 'G', notes: ['', '', 'Cb', '', 'Db', '', '', ''] },
+                        { guitarString: 'D', notes: ['', '', 'Gb', '', 'Ab', '', '', ''] },
+                        { guitarString: 'A', notes: ['Cb', '', 'Db', '', '', '', '', ''] },
+                        { guitarString: 'E', notes: ['Gb', '', 'Ab', '', '', '', '', ''] }
+                    ])
+                ];
                 break;
             default:
-                console.error('invalid scale');
+                console.error('invalid shape');
                 this.shapes = [];
                 break;
         }

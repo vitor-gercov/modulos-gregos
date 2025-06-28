@@ -1,18 +1,19 @@
-<fieldset>
+<fieldset id="dominant_hand_fieldset">
     <legend>
-        Escolha qual quarta você quer estudar:
+        Selecione a sua mão dominante:
     </legend>
-    <section class="cicle_of_fourths_section">
-        @for(note of notes; track $index) {
-        <div>
-            <input type="radio" [id]="inputId($index)" name="cicle_of_fourths" [value]="inputId($index)"
-                [(ngModel)]="fourthSelected" class="triangle_button">
-            <label [for]="inputId($index)">
-                {{ note }}
-            </label>
-        </div>
-        }
-    </section>
+    <span class="radio_option">
+        <input type="radio" id="shape_1_radio" name="selected_shape" value="shape_1" [(ngModel)]="selectedShape">
+        <label for="shape_1_radio">
+            1º Shape
+        </label>
+    </span>
+    <span class="radio_option">
+        <input type="radio" id="shape_5_radio" name="selected_shape" value="shape_5" [(ngModel)]="selectedShape">
+        <label for="shape_5_radio">
+            5º Shape
+        </label>
+    </span>
 </fieldset>
 @for (shape of shapes(); track $index) {
 <app-shape [shape]="shape" />
