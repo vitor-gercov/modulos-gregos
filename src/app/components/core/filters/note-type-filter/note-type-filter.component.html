@@ -1,0 +1,42 @@
+<div class="select">
+    <label for="note_type_select">
+        Escolha entre cifras e/ou notas:
+    </label>
+    <select name="note_type" id="note_type_select" [(ngModel)]="noteType">
+        <option value="abc" selected>A B C...</option>
+        <option value="lasido">Lá Sí Dó...</option>
+        <option value="abclasido">A B C... / Lá Sí Dó...</option>
+        <option value="lasidoabc">Lá Sí Dó... / A B C...</option>
+    </select>
+</div>
+<div class="radio">
+    <fieldset id="note_type_fieldset">
+        <legend>
+            Escolha entre cifras e/ou notas:
+        </legend>
+        <span class="radio_option">
+            <input type="radio" id="abc_radio" name="note_type" value="abc" [(ngModel)]="noteType">
+            <label for="abc_radio">
+                A B C...
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="lasido_radio" name="note_type" value="lasido" [(ngModel)]="noteType">
+            <label for="lasido_radio">
+                Lá Sí Dó...
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="abclasido_radio" name="note_type" value="abclasido" [(ngModel)]="noteType">
+            <label for="abclasido_radio">
+                A B C ... / Lá Sí Dó...
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="lasidoabc_radio" name="note_type" value="lasidoabc" [(ngModel)]="noteType">
+            <label for="lasidoabc_radio">
+                Lá Sí Dó... / A B C ...
+            </label>
+        </span>
+    </fieldset>
+</div>

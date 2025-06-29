@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CAGED } from '../../../models/caged.model';
 import { ShapeComponent } from 'app/components/shape/shape.component';
 import { DominantHandFilterComponent } from 'app/components/core/filters/dominant-hand-filter/dominant-hand-filter.component';
+import { NoteTypeFilterComponent } from "../../core/filters/note-type-filter/note-type-filter.component";
 
 
 @Component({
@@ -11,7 +12,8 @@ import { DominantHandFilterComponent } from 'app/components/core/filters/dominan
   imports: [
     ShapeComponent,
     DominantHandFilterComponent,
-    FormsModule
+    FormsModule,
+    NoteTypeFilterComponent
   ],
   templateUrl: './shapes.component.html',
   styleUrl: './shapes.component.css'
