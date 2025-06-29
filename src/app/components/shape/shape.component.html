@@ -1,7 +1,7 @@
-@if(modulo) {
+@if(shape) {
 <section>
     <h2>
-        {{ modulo.titulo }}
+        {{ shape.title }}
     </h2>
     <table>
         <thead>
@@ -9,30 +9,30 @@
                 <th scope="col">
                     Corda
                 </th>
-                <th [attr.colspan]="modulo.casas.length" scope="col">
+                <th [attr.colspan]="shape.frets.length" scope="col">
                     Casa
                 </th>
             </tr>
             <tr>
                 <th scope="col"></th>
-                @for(casa of modulo.casas; track $index) {
+                @for(fret of shape.frets; track $index) {
                 <th scope="col">
-                    {{ casa }}
+                    {{ fret }}
                 </th>
                 }
             </tr>
         </thead>
         <tbody>
-            @for(corda of modulo.cordas; track $index) {
+            @for(guitarString of shape.guitarStrings; track $index) {
             <tr>
                 <th scope="row">
-                    {{ corda.corda }}
+                    {{ guitarString.guitarString }}
                 </th>
-                @for(nota of corda.notas; track $index) {
+                @for(note of guitarString.notes; track $index) {
                 <td [ngClass]="{
-                    'nota': nota !== ''
+                    'nota': note !== ''
                 }">
-                    {{ nota }}
+                    {{ note }}
                 </td>
                 }
             </tr>

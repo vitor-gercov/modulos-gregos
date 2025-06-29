@@ -1,0 +1,22 @@
+<fieldset id="dominant_hand_fieldset">
+    <legend>
+        Selecione a sua mão dominante:
+    </legend>
+    <span class="radio_option">
+        <input type="radio" id="shape_1_radio" name="selected_shape" value="shape_1" [(ngModel)]="selectedShape">
+        <label for="shape_1_radio">
+            1º Shape
+        </label>
+    </span>
+    <span class="radio_option">
+        <input type="radio" id="shape_5_radio" name="selected_shape" value="shape_5" [(ngModel)]="selectedShape">
+        <label for="shape_5_radio">
+            5º Shape
+        </label>
+    </span>
+</fieldset>
+<app-note-type-filter [(noteType)]="noteType"></app-note-type-filter>
+<app-dominant-hand-filter [(dominantHand)]="dominantHand"></app-dominant-hand-filter>
+@for (shape of shapes(); track $index) {
+<app-shape [shape]="shape" />
+}

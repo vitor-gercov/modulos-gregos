@@ -1,0 +1,42 @@
+header {
+    padding: 1.5rem 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-bottom: 1px solid white;
+
+    h1 {
+        margin: 0;
+        display: inline;
+    }
+
+    nav {
+        transform: translateY(1px);
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: rgb(54, 54, 54);
+            color: rgb(197, 197, 197);
+            padding: .5rem 1rem;
+            border: 1px solid rgb(197, 197, 197);
+            border-bottom-color: white;
+            border-radius: .5rem .5rem 0 0;
+            transition: all .2s ease-in;
+        }
+
+        a:hover {
+            color: white;
+            border-color: white;
+            scale: 1.05;
+        }
+
+        a.current_route {
+            color: white;
+            border-color: white;
+            border-bottom-color: rgb(54, 54, 54);
+            scale: 1.05;
+        }
+
+    }
+}

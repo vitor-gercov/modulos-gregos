@@ -1,0 +1,12 @@
+<header>
+    <h1>
+        CAGED
+    </h1>
+    <nav>
+        @for(navbarOption of navbarOptions(); track $index) {
+        <a [routerLink]="navbarOption.path" routerLinkActive="current_route" ariaCurrentWhenActive="page">
+            {{ navbarOption.label }}
+        </a>
+        }
+    </nav>
+</header>

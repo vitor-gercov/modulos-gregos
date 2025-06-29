@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModulosGregosComponent } from './modulos-gregos.component';
+import { ShapesComponent } from './shapes.component';
 
 describe('ModulosGregosComponent', () => {
-  let component: ModulosGregosComponent;
-  let fixture: ComponentFixture<ModulosGregosComponent>;
+  let component: ShapesComponent;
+  let fixture: ComponentFixture<ShapesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ModulosGregosComponent]
+      imports: [ShapesComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
-    fixture = TestBed.createComponent(ModulosGregosComponent);
+    fixture = TestBed.createComponent(ShapesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

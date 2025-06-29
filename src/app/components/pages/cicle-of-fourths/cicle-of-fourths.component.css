@@ -1,0 +1,6 @@
+.cicle_of_fourths_section {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: auto auto auto;
+    row-gap: 1.5rem;
+}

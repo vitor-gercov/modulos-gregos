@@ -1,0 +1,30 @@
+.select_options {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        margin-bottom: .5rem;
+    }
+}
+
+.radio_options {
+    display: none;
+}
+
+.radio_option {
+    margin-right: 1rem;
+
+    * {
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .select_options {
+        display: none;
+    }
+
+    .radio_options {
+        display: grid;
+    }
+}
