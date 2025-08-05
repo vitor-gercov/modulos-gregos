@@ -15,5 +15,9 @@ export const routes: Routes = [
     {
         path: 'cicle-of-fourths',
         component: CicleOfFourthsComponent
+    },
+    {
+        path: 'intervals',
+        loadComponent: () => import('./components/pages/intervals/intervals.component').then(m => m.IntervalsComponent)
     }
 ];

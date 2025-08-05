@@ -12,6 +12,12 @@ export const NOTE_TYPE_RELATIONS = [
         lasidoabc: 'Lá / A'
     },
     {
+        abc: 'A#',
+        lasido: 'Lá#',
+        abclasido: 'A# / Lá#',
+        lasidoabc: 'Lá# / A#'
+    },
+    {
         abc: 'Bb',
         lasido: 'Síb',
         abclasido: 'Bb / Síb',
@@ -24,6 +30,12 @@ export const NOTE_TYPE_RELATIONS = [
         lasidoabc: 'Sí / B'
     },
     {
+        abc: 'B#',
+        lasido: 'Sí#',
+        abclasido: 'B# / Sí#',
+        lasidoabc: 'Sí# / B#'
+    },
+    {
         abc: 'Cb',
         lasido: 'Dób',
         abclasido: 'Cb / Dób',
@@ -34,6 +46,12 @@ export const NOTE_TYPE_RELATIONS = [
         lasido: 'Dó',
         abclasido: 'C / Dó',
         lasidoabc: 'Dó / C'
+    },
+    {
+        abc: 'C#',
+        lasido: 'Dó#',
+        abclasido: 'C# / Dó#',
+        lasidoabc: 'Dó# / C#'
     },
     {
         abc: 'Db',
@@ -66,10 +84,28 @@ export const NOTE_TYPE_RELATIONS = [
         lasidoabc: 'Mi / E'
     },
     {
+        abc: 'E#',
+        lasido: 'Mi#',
+        abclasido: 'E# / Mi#',
+        lasidoabc: 'Mi# / E#'
+    },
+    {
+        abc: 'Fb',
+        lasido: 'Fáb',
+        abclasido: 'Fb / Fáb',
+        lasidoabc: 'Fáb / Fb'
+    },
+    {
         abc: 'F',
         lasido: 'Fá',
         abclasido: 'F / Fá',
         lasidoabc: 'Fá / F'
+    },
+    {
+        abc: 'F#',
+        lasido: 'Fá#',
+        abclasido: 'F# / Fá#',
+        lasidoabc: 'Fá# / F#'
     },
     {
         abc: 'Gb',
@@ -82,5 +118,11 @@ export const NOTE_TYPE_RELATIONS = [
         lasido: 'Sol',
         abclasido: 'G / Sol',
         lasidoabc: 'Sol / G'
+    },
+    {
+        abc: 'G#',
+        lasido: 'Sol#',
+        abclasido: 'G# / Sol#',
+        lasidoabc: 'Sol# / G#'
     }
 ];
