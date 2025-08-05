@@ -1,0 +1,102 @@
+import { Intervals } from "@types";
+
+export const INTERVALS: Intervals[] = [
+    {
+        root: "A",
+        secondMinor: "Bb",
+        secondMajor: "B",
+        thirdMinor: "C",
+        thirdMajor: "C#",
+        fourth: "D",
+        tritone: "D#",
+        fifth: "E",
+        sixthMinor: "F",
+        sixthMajor: "F#",
+        seventhMinor: "G",
+        seventhMajor: "G#"
+    },
+    {
+        root: "B",
+        secondMinor: "C",
+        secondMajor: "C#",
+        thirdMinor: "D",
+        thirdMajor: "D#",
+        fourth: "E",
+        tritone: "F",
+        fifth: "F#",
+        sixthMinor: "G",
+        sixthMajor: "G#",
+        seventhMinor: "A",
+        seventhMajor: "A#"
+    },
+    {
+        root: "C",
+        secondMinor: "Db",
+        secondMajor: "D",
+        thirdMinor: "Eb",
+        thirdMajor: "E",
+        fourth: "F",
+        tritone: "F#",
+        fifth: "G",
+        sixthMinor: "Ab",
+        sixthMajor: "A",
+        seventhMinor: "Bb",
+        seventhMajor: "B"
+    },
+    {
+        root: "D",
+        secondMinor: "Eb",
+        secondMajor: "E",
+        thirdMinor: "F",
+        thirdMajor: "F#",
+        fourth: "G",
+        tritone: "G#",
+        fifth: "A",
+        sixthMinor: "Bb",
+        sixthMajor: "B",
+        seventhMinor: "C",
+        seventhMajor: "C#"
+    },
+    {
+        root: "E",
+        secondMinor: "F",
+        secondMajor: "F#",
+        thirdMinor: "G",
+        thirdMajor: "G#",
+        fourth: "A",
+        tritone: "A#",
+        fifth: "B",
+        sixthMinor: "C",
+        sixthMajor: "C#",
+        seventhMinor: "D",
+        seventhMajor: "D#"
+    },
+    {
+        root: "F",
+        secondMinor: "Gb",
+        secondMajor: "G",
+        thirdMinor: "Ab",
+        thirdMajor: "A",
+        fourth: "Bb",
+        tritone: "B",
+        fifth: "C",
+        sixthMinor: "Db",
+        sixthMajor: "D",
+        seventhMinor: "Eb",
+        seventhMajor: "E"
+    },
+    {
+        root: "G",
+        secondMinor: "Ab",
+        secondMajor: "A",
+        thirdMinor: "Bb",
+        thirdMajor: "B",
+        fourth: "C",
+        tritone: "C#",
+        fifth: "D",
+        sixthMinor: "Eb",
+        sixthMajor: "E",
+        seventhMinor: "F",
+        seventhMajor: "F#"
+    }
+]

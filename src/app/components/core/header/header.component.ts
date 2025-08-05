@@ -19,6 +19,10 @@ export class HeaderComponent {
     {
       label: 'Ciclo de quartas',
       path: '/cicle-of-fourths'
+    },
+    {
+      label: 'Intervalos musicais',
+      path: '/intervals'
     }
   ]);
 }
