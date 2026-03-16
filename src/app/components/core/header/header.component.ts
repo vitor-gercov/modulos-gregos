@@ -1,28 +1,35 @@
-import { Component, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, ElementRef, inject, signal, viewChild } from '@angular/core';
+import { ThemeService } from '../../../services/theme.service';
 
 @Component({
   selector: 'app-header',
-  imports: [
-    RouterLink,
-    RouterLinkActive
-  ],
+  imports: [],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  protected readonly themeService = inject(ThemeService);
   navbarOptions = signal([
     {
       label: 'Shapes',
       path: '/caged'
-    },
-    {
-      label: 'Ciclo de quartas',
-      path: '/cicle-of-fourths'
-    },
-    {
-      label: 'Intervalos musicais',
-      path: '/intervals'
     }
   ]);
+
+  helpDialog = viewChild<ElementRef<HTMLDialogElement>>('helpDialog');
+
+  openHelp(): void {
+    this.helpDialog()?.nativeElement.showModal();
+  }
+
+  closeHelp(): void {
+    this.helpDialog()?.nativeElement.close();
+  }
+
+  onDialogClick(event: MouseEvent): void {
+    const dialog = this.helpDialog()?.nativeElement;
+    if (event.target === dialog) {
+      dialog?.close();
+    }
+  }
 }

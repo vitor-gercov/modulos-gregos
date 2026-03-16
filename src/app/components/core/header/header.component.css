@@ -1,42 +1,373 @@
 header {
-    padding: 1.5rem 1.5rem 0;
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    border-bottom: 1px solid white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.75rem;
+    background: linear-gradient(135deg, var(--bg-base) 0%, var(--bg-surface) 100%);
+    border-bottom: 1px solid var(--color-accent-border-subtle);
+    box-shadow: var(--shadow-header);
+
+    .header-brand {
+        display: flex;
+        align-items: baseline;
+        gap: 0.75rem;
+    }
 
     h1 {
         margin: 0;
-        display: inline;
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 
-    nav {
-        transform: translateY(1px);
+    .subtitle {
+        font-size: 0.7rem;
+        color: var(--color-text-subtle);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+    }
+}
 
-        a {
-            display: inline-block;
-            text-decoration: none;
-            background-color: rgb(54, 54, 54);
-            color: rgb(197, 197, 197);
-            padding: .5rem 1rem;
-            border: 1px solid rgb(197, 197, 197);
-            border-bottom-color: white;
-            border-radius: .5rem .5rem 0 0;
-            transition: all .2s ease-in;
-        }
+/* ── Agrupador de ações do header ────────────────────────────── */
 
-        a:hover {
-            color: white;
-            border-color: white;
-            scale: 1.05;
-        }
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
 
-        a.current_route {
-            color: white;
-            border-color: white;
-            border-bottom-color: rgb(54, 54, 54);
-            scale: 1.05;
-        }
+/* ── Botão de alternância de tema ────────────────────────────── */
 
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    background: transparent;
+    border: 1px solid var(--color-accent-border);
+    border-radius: 50%;
+    color: var(--color-accent-hover);
+    cursor: pointer;
+    transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+
+    svg {
+        flex-shrink: 0;
+    }
+}
+
+.theme-toggle:hover {
+    background: var(--color-accent-muted);
+    border-color: var(--color-accent-border-strong);
+    color: var(--color-accent-light);
+    box-shadow: 0 0 12px var(--color-accent-glow);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* ── Help button ─────────────────────────────────────────────── */
+
+.help-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.9rem;
+    background: transparent;
+    border: 1px solid var(--color-accent-border);
+    border-radius: 2rem;
+    color: var(--color-accent-hover);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+
+    .help-icon {
+        width: 1rem;
+        height: 1rem;
+        flex-shrink: 0;
+    }
+}
+
+.help-btn:hover {
+    background: var(--color-accent-muted);
+    border-color: var(--color-accent-border-strong);
+    color: var(--color-accent-light);
+    box-shadow: 0 0 12px var(--color-accent-glow);
+}
+
+.help-btn:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* ── Dialog ──────────────────────────────────────────────────── */
+
+.notes-dialog {
+    border: 1px solid var(--color-accent-border);
+    border-radius: 1rem;
+    padding: 0;
+    background: var(--bg-dialog);
+    color: var(--color-text);
+    width: min(500px, 92vw);
+    max-height: 88svh;
+    overflow: hidden;
+    box-shadow: var(--shadow-dialog);
+
+    /* Entry & exit transitions using modern CSS */
+    opacity: 0;
+    transform: translateY(1.5rem) scale(0.96);
+    transition:
+        opacity 0.28s ease,
+        transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+        display 0.28s allow-discrete,
+        overlay 0.28s allow-discrete;
+}
+
+.notes-dialog[open] {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+@starting-style {
+    .notes-dialog[open] {
+        opacity: 0;
+        transform: translateY(1.5rem) scale(0.96);
+    }
+}
+
+.notes-dialog::backdrop {
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+    transition:
+        background 0.28s ease,
+        backdrop-filter 0.28s ease,
+        display 0.28s allow-discrete,
+        overlay 0.28s allow-discrete;
+}
+
+.notes-dialog[open]::backdrop {
+    background: var(--color-backdrop);
+    backdrop-filter: blur(6px);
+}
+
+@starting-style {
+    .notes-dialog[open]::backdrop {
+        background: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+    }
+}
+
+/* ── Dialog inner layout ─────────────────────────────────────── */
+
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    max-height: 88svh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-accent-border) transparent;
+}
+
+.dialog-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid var(--color-border-subtle);
+    position: sticky;
+    top: 0;
+    background: var(--bg-dialog);
+    z-index: 1;
+}
+
+.dialog-title {
+    margin: 0 0 0.25rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dialog-subtitle {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--color-text-subtle);
+    letter-spacing: 0.02em;
+}
+
+.close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+    svg {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+.close-btn:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-border-medium);
+    color: var(--color-text);
+}
+
+.close-btn:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* ── Dialog body ─────────────────────────────────────────────── */
+
+.dialog-body {
+    padding: 1.25rem 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+/* ── Section label ───────────────────────────────────────────── */
+
+.section-label {
+    margin: 0 0 0.85rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text-subtle);
+}
+
+/* ── Notes grid ──────────────────────────────────────────────── */
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+}
+
+.note-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.75rem 0.5rem;
+    background: var(--color-accent-tint);
+    border: 1px solid var(--color-accent-border-faint);
+    border-radius: 0.65rem;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.note-card:hover {
+    background: var(--color-accent-muted);
+    border-color: var(--color-accent-border);
+    transform: translateY(-1px);
+}
+
+.note-abc {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-accent-light);
+    line-height: 1;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.note-eq {
+    font-size: 0.65rem;
+    color: var(--color-text-faint);
+    line-height: 1;
+}
+
+.note-lasido {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    line-height: 1;
+}
+
+/* ── Symbols grid ────────────────────────────────────────────── */
+
+.symbols-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.symbol-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-surface-tint);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 0.65rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.symbol-card:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-border-medium);
+}
+
+.symbol-glyph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    flex-shrink: 0;
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent-border-subtle);
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-accent-hover);
+    font-family: 'Roboto Mono', monospace;
+}
+
+.symbol-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.symbol-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.symbol-desc {
+    font-size: 0.72rem;
+    color: var(--color-text-subtle);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+
+@media screen and (min-width: 480px) {
+    .notes-grid {
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    .note-abc {
+        font-size: 1.5rem;
     }
 }

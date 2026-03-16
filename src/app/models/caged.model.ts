@@ -1,15 +1,12 @@
 import { GuitarString } from "@types";
 import { Shape } from "./shape.model";
-import { NOTE_TYPE_RELATIONS } from "app/consts";
 
 export class CAGED {
     shapes: Shape[] = [];
-    private noteTypeRelations = NOTE_TYPE_RELATIONS;
 
     constructor(
         private scale: string = 'major',
-        private dominantHand: string = 'right_handed',
-        private noteType: string = 'abc'
+        private dominantHand: string = 'right_handed'
     ) {
         this.setShapes();
     }
@@ -185,21 +182,7 @@ export class CAGED {
     }
 
     private setGuitarString(guitarString: GuitarString): GuitarString {
-        guitarString = this.setGuitarStringNoteType(guitarString);
         guitarString = this.setGuitarStringDominantHand(guitarString);
-        return guitarString;
-    }
-
-    private setGuitarStringNoteType(guitarString: GuitarString): GuitarString {
-        let noteTypeRelation = this.noteTypeRelations.find(note => note.abc === guitarString.guitarString)!;
-        guitarString.guitarString = noteTypeRelation[this.noteType as keyof typeof noteTypeRelation];
-        guitarString.notes = guitarString.notes.map(note => {
-            if (note !== '') {
-                let noteTypeRelation = this.noteTypeRelations.find(noteType => noteType.abc === note)!;
-                note = noteTypeRelation[this.noteType as keyof typeof noteTypeRelation];
-            }
-            return note;
-        });
         return guitarString;
     }
 

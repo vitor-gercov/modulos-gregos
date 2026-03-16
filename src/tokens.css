@@ -1,0 +1,108 @@
+/* =================================================================
+   Design Tokens — fonte única de verdade para todas as cores
+   Tema padrão: escuro (:root)
+   Tema claro: [data-theme='light']
+   ================================================================= */
+
+/* ── Tema escuro (padrão) ──────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-base:     #1c1c1c;
+  --bg-surface:  #242424;
+  --bg-surface-2:#2c2c2c;
+  --bg-dialog:   #1e1e24;
+
+  /* Accent (roxo) */
+  --color-accent:              #8b5cf6;
+  --color-accent-hover:        #a78bfa;
+  --color-accent-light:        #c4b5fd;
+  --color-accent-tint:         rgba(139, 92, 246, 0.06);
+  --color-accent-soft:         rgba(139, 92, 246, 0.10);
+  --color-accent-muted:        rgba(139, 92, 246, 0.12);
+  --color-accent-border-faint: rgba(139, 92, 246, 0.15);
+  --color-accent-border-subtle:rgba(139, 92, 246, 0.25);
+  --color-accent-border:       rgba(139, 92, 246, 0.35);
+  --color-accent-border-strong:rgba(139, 92, 246, 0.65);
+  --color-accent-glow:         rgba(139, 92, 246, 0.20);
+
+  /* Texto */
+  --color-text:           #f0f0f0;
+  --color-text-secondary: #d0d0d0;
+  --color-text-muted:     #909090;
+  --color-text-subtle:    #707070;
+  --color-text-faint:     rgba(255, 255, 255, 0.20);
+
+  /* Bordas e superfícies */
+  --color-border:         rgba(255, 255, 255, 0.10);
+  --color-border-medium:  rgba(255, 255, 255, 0.18);
+  --color-border-subtle:  rgba(255, 255, 255, 0.07);
+  --color-surface-tint:   rgba(255, 255, 255, 0.03);
+  --color-surface-hover:  rgba(255, 255, 255, 0.07);
+
+  /* Sobreposições */
+  --color-backdrop: rgba(0, 0, 0, 0.72);
+
+  /* Sombras */
+  --shadow:        0 4px 24px rgba(0, 0, 0, 0.40);
+  --shadow-header: 0 2px 16px rgba(0, 0, 0, 0.35);
+  --shadow-dialog: 0 24px 64px rgba(0, 0, 0, 0.70),
+                   0 0 0 1px rgba(139, 92, 246, 0.08),
+                   inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  /* Hint de esquema de cores para controles nativos do browser */
+  color-scheme: dark;
+}
+
+/* ── Tema claro ────────────────────────────────────────────────── */
+[data-theme='light'] {
+  /* Backgrounds */
+  --bg-base:     #f5f5f5;
+  --bg-surface:  #ffffff;
+  --bg-surface-2:#ececec;
+  --bg-dialog:   #ffffff;
+
+  /* Accent (roxo mais escuro para contraste em fundo claro) */
+  --color-accent:              #7c3aed;
+  --color-accent-hover:        #6d28d9;
+  --color-accent-light:        #8b5cf6;
+  --color-accent-tint:         rgba(124, 58, 237, 0.05);
+  --color-accent-soft:         rgba(124, 58, 237, 0.08);
+  --color-accent-muted:        rgba(124, 58, 237, 0.10);
+  --color-accent-border-faint: rgba(124, 58, 237, 0.12);
+  --color-accent-border-subtle:rgba(124, 58, 237, 0.20);
+  --color-accent-border:       rgba(124, 58, 237, 0.30);
+  --color-accent-border-strong:rgba(124, 58, 237, 0.60);
+  --color-accent-glow:         rgba(124, 58, 237, 0.15);
+
+  /* Texto */
+  --color-text:           #1a1a1a;
+  --color-text-secondary: #303030;
+  --color-text-muted:     #606060;
+  --color-text-subtle:    #808080;
+  --color-text-faint:     rgba(0, 0, 0, 0.20);
+
+  /* Bordas e superfícies */
+  --color-border:         rgba(0, 0, 0, 0.12);
+  --color-border-medium:  rgba(0, 0, 0, 0.20);
+  --color-border-subtle:  rgba(0, 0, 0, 0.06);
+  --color-surface-tint:   rgba(0, 0, 0, 0.02);
+  --color-surface-hover:  rgba(0, 0, 0, 0.05);
+
+  /* Sobreposições */
+  --color-backdrop: rgba(0, 0, 0, 0.50);
+
+  /* Sombras */
+  --shadow:        0 4px 24px rgba(0, 0, 0, 0.10);
+  --shadow-header: 0 2px 16px rgba(0, 0, 0, 0.08);
+  --shadow-dialog: 0 24px 64px rgba(0, 0, 0, 0.15),
+                   0 0 0 1px rgba(124, 58, 237, 0.08),
+                   inset 0 1px 0 rgba(255, 255, 255, 0.80);
+
+  color-scheme: light;
+}
+
+/* ── Tokens independentes de tema ─────────────────────────────── */
+:root {
+  --radius:    0.75rem;
+  --radius-sm: 0.40rem;
+}

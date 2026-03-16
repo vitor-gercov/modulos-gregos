@@ -1,19 +1,64 @@
+section {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+}
+
+h2 {
+    margin: 0 0 1rem 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-accent-hover);
+}
+
 table {
     width: 100%;
-    justify-items: center;
     border-collapse: collapse;
 }
 
 td,
 th {
-    border: 1px solid white;
-    padding: 8px 10px;
+    border: 1px solid var(--color-border);
+    padding: 6px 8px;
+    font-size: 0.82rem;
 }
 
 td {
     text-align: center;
 }
 
+thead th {
+    background-color: var(--bg-surface-2);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+tbody th {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+    white-space: nowrap;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+tbody tr:hover td,
+tbody tr:hover th {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
 .nota {
-    background-color: rgb(75, 0, 75);
+    background-color: #6d28d9;
+    color: white;
+    font-weight: 500;
+}
+
+tbody tr:hover .nota {
+    background-color: var(--color-accent);
 }
