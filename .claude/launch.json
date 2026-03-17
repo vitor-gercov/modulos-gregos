@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "modulos-gregos",
-      "runtimeExecutable": "C:\\Program Files\\nodejs\\npm.cmd",
-      "runtimeArgs": ["run", "start"],
+      "runtimeExecutable": "C:\\Windows\\System32\\cmd.exe",
+      "runtimeArgs": ["/c", "npm", "run", "start"],
       "port": 4200
     }
   ]

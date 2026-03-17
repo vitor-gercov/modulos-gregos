@@ -1,36 +1,16 @@
 @if(shape) {
 <section>
-    <h2>
+    <h2 appSectionTitle>
         {{ shape.title }}
     </h2>
     <table>
-        <thead>
-            <tr>
-                <th scope="col">
-                    Corda
-                </th>
-                <th [attr.colspan]="shape.frets.length" scope="col">
-                    Casa
-                </th>
-            </tr>
-            <tr>
-                <th scope="col"></th>
-                @for(fret of shape.frets; track $index) {
-                <th scope="col">
-                    {{ fret }}
-                </th>
-                }
-            </tr>
-        </thead>
         <tbody>
             @for(guitarString of shape.guitarStrings; track $index) {
             <tr>
-                <th scope="row">
-                    {{ guitarString.guitarString }}
-                </th>
                 @for(note of guitarString.notes; track $index) {
                 <td [ngClass]="{
-                    'nota': note !== ''
+                    'nota': note !== '',
+                    'tonic': note !== '' && note === tonic
                 }">
                     {{ note }}
                 </td>

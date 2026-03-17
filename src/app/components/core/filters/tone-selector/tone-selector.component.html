@@ -1,0 +1,9 @@
+<div class="tone-selector">
+    <div class="keys-grid">
+        @for (k of keys; track k) {
+        <button type="button" [class.active]="key() === k" (click)="key.set(k)">
+            {{ k }}
+        </button>
+        }
+    </div>
+</div>

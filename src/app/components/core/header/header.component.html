@@ -1,7 +1,6 @@
 <header>
     <div class="header-brand">
         <h1>CAGED</h1>
-        <span class="subtitle">Sistema de Guitarra</span>
     </div>
     <div class="header-actions">
     <button
@@ -11,7 +10,6 @@
       [attr.aria-label]="themeService.theme() === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'"
     >
       @if (themeService.theme() === 'dark') {
-        <!-- Sol: alternar para claro -->
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
           fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -19,7 +17,6 @@
           <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
         </svg>
       } @else {
-        <!-- Lua: alternar para escuro -->
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
           fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -27,92 +24,73 @@
         </svg>
       }
     </button>
-    <button class="help-btn" (click)="openHelp()" aria-label="Abrir guia de notas musicais">
-        <svg class="help-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-            <circle cx="12" cy="17" r=".5" fill="currentColor"/>
-        </svg>
-        <span class="help-label">Notas</span>
-    </button>
+    <app-help-modal
+        label="Notas"
+        ariaLabel="Abrir guia de notas musicais"
+        title="Guia de Notas"
+        subtitle="Equivalência entre cifras e notas musicais">
+
+        <section class="notes-section">
+            <h3 class="section-label">Notas naturais</h3>
+            <div class="notes-grid">
+                <div class="note-card">
+                    <span class="note-abc">A</span>
+                    <span class="note-eq">=</span>
+                    <span class="note-lasido">Lá</span>
+                </div>
+                <div class="note-card">
+                    <span class="note-abc">B</span>
+                    <span class="note-eq">=</span>
+                    <span class="note-lasido">Sí</span>
+                </div>
+                <div class="note-card">
+                    <span class="note-abc">C</span>
+                    <span class="note-eq">=</span>
+                    <span class="note-lasido">Dó</span>
+                </div>
+                <div class="note-card">
+                    <span class="note-abc">D</span>
+                    <span class="note-eq">=</span>
+                    <span class="note-lasido">Ré</span>
+                </div>
+                <div class="note-card">
+                    <span class="note-abc">E</span>
+                    <span class="note-eq">=</span>
+                    <span class="note-lasido">Mi</span>
+                </div>
+                <div class="note-card">
+                    <span class="note-abc">F</span>
+                    <span class="note-eq">=</span>
+                    <span class="note-lasido">Fá</span>
+                </div>
+                <div class="note-card">
+                    <span class="note-abc">G</span>
+                    <span class="note-eq">=</span>
+                    <span class="note-lasido">Sol</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="symbols-section">
+            <h3 class="section-label">Símbolos</h3>
+            <div class="symbols-grid">
+                <div class="symbol-card">
+                    <span class="symbol-glyph">#</span>
+                    <div class="symbol-info">
+                        <span class="symbol-name">Sustenido</span>
+                        <span class="symbol-desc">eleva a nota meio tom</span>
+                    </div>
+                </div>
+                <div class="symbol-card">
+                    <span class="symbol-glyph">b</span>
+                    <div class="symbol-info">
+                        <span class="symbol-name">Bemol</span>
+                        <span class="symbol-desc">abaixa a nota meio tom</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </app-help-modal>
     </div>
 </header>
-
-<dialog #helpDialog class="notes-dialog" (click)="onDialogClick($event)">
-    <div class="dialog-content">
-        <div class="dialog-header">
-            <div class="dialog-title-group">
-                <h2 class="dialog-title">Guia de Notas</h2>
-                <p class="dialog-subtitle">Equivalência entre cifras e notas musicais</p>
-            </div>
-            <button class="close-btn" (click)="closeHelp()" aria-label="Fechar guia">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path d="M18 6 6 18M6 6l12 12"/>
-                </svg>
-            </button>
-        </div>
-
-        <div class="dialog-body">
-            <section class="notes-section">
-                <h3 class="section-label">Notas naturais</h3>
-                <div class="notes-grid">
-                    <div class="note-card">
-                        <span class="note-abc">A</span>
-                        <span class="note-eq">=</span>
-                        <span class="note-lasido">Lá</span>
-                    </div>
-                    <div class="note-card">
-                        <span class="note-abc">B</span>
-                        <span class="note-eq">=</span>
-                        <span class="note-lasido">Sí</span>
-                    </div>
-                    <div class="note-card">
-                        <span class="note-abc">C</span>
-                        <span class="note-eq">=</span>
-                        <span class="note-lasido">Dó</span>
-                    </div>
-                    <div class="note-card">
-                        <span class="note-abc">D</span>
-                        <span class="note-eq">=</span>
-                        <span class="note-lasido">Ré</span>
-                    </div>
-                    <div class="note-card">
-                        <span class="note-abc">E</span>
-                        <span class="note-eq">=</span>
-                        <span class="note-lasido">Mi</span>
-                    </div>
-                    <div class="note-card">
-                        <span class="note-abc">F</span>
-                        <span class="note-eq">=</span>
-                        <span class="note-lasido">Fá</span>
-                    </div>
-                    <div class="note-card">
-                        <span class="note-abc">G</span>
-                        <span class="note-eq">=</span>
-                        <span class="note-lasido">Sol</span>
-                    </div>
-                </div>
-            </section>
-
-            <section class="symbols-section">
-                <h3 class="section-label">Símbolos</h3>
-                <div class="symbols-grid">
-                    <div class="symbol-card">
-                        <span class="symbol-glyph">#</span>
-                        <div class="symbol-info">
-                            <span class="symbol-name">Sustenido</span>
-                            <span class="symbol-desc">eleva a nota meio tom</span>
-                        </div>
-                    </div>
-                    <div class="symbol-card">
-                        <span class="symbol-glyph">b</span>
-                        <div class="symbol-info">
-                            <span class="symbol-name">Bemol</span>
-                            <span class="symbol-desc">abaixa a nota meio tom</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-</dialog>

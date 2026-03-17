@@ -1,6 +1,63 @@
-<div class="filters-panel">
+<div class="tone-panel">
+    <div class="tone-panel-header">
+        <span appSectionTitle>Tom e Escala</span>
+        <app-help-modal
+            label="O que é isso?"
+            ariaLabel="Guia de tom e escala"
+            title="Tom e Escala"
+            subtitle="Conceitos fundamentais para navegar no braço">
+
+            <section class="intervals-intro-section">
+                <p class="intervals-intro">
+                    Escolha o <strong>tom</strong> (nota raiz) e o <strong>tipo de escala</strong>
+                    para visualizar os shapes correspondentes no braço da guitarra ou baixo.
+                </p>
+            </section>
+
+            <section>
+                <h3 class="intervals-section-label">Tom (Tônica)</h3>
+                <div class="concept-card">
+                    <p class="concept-desc">
+                        O <strong>tom</strong> é a nota principal da escala — aquela que dá o nome a ela.
+                        Toda escala "gira em torno" do tom escolhido, que é chamado de <strong>tônica</strong>.
+                    </p>
+                    <div class="concept-examples">
+                        <span class="concept-example-chip">C Maior → tônica é <strong>C</strong></span>
+                        <span class="concept-example-chip">A Menor → tônica é <strong>A</strong></span>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="intervals-section-label">Escala</h3>
+                <div class="concept-card">
+                    <p class="concept-desc">
+                        Uma <strong>escala</strong> é uma sequência de notas organizadas por um padrão
+                        fixo de tons e semitons. Cada tipo de escala tem seu próprio "sabor" sonoro.
+                    </p>
+                </div>
+                <div class="scale-concepts-list">
+                    <div class="scale-concept-row">
+                        <span class="scale-concept-name">Maior</span>
+                        <span class="scale-concept-desc">Som alegre e brilhante. A mais comum no repertório pop e rock.</span>
+                    </div>
+                    <div class="scale-concept-row">
+                        <span class="scale-concept-name">Pentatônica</span>
+                        <span class="scale-concept-desc">5 notas da escala maior. Base do blues, rock e solos.</span>
+                    </div>
+                    <div class="scale-concept-row">
+                        <span class="scale-concept-name">Penta Blues</span>
+                        <span class="scale-concept-desc">Pentatônica com a nota blue (trítono). Característica do blues.</span>
+                    </div>
+                </div>
+            </section>
+
+        </app-help-modal>
+    </div>
+    <div class="tone-selector-row">
+        <app-tone-selector [(key)]="key"></app-tone-selector>
+    </div>
     <section class="select_options">
-        <label for="scale_select">Escala</label>
         <select name="scale" id="scale_select" [(ngModel)]="scaleSelected">
             <option value="major" selected>Maior</option>
             <option value="penta">Penta</option>
@@ -9,7 +66,6 @@
     </section>
     <section class="radio_options">
         <fieldset id="scale_fieldset">
-            <legend>Escala</legend>
             <span class="radio_option">
                 <input type="radio" id="major_radio" name="scale" value="major" [(ngModel)]="scaleSelected">
                 <label for="major_radio">Maior</label>
@@ -24,11 +80,125 @@
             </span>
         </fieldset>
     </section>
-    <app-dominant-hand-filter [(dominantHand)]="dominantHand"></app-dominant-hand-filter>
+</div>
+
+<div class="options-panel">
+    <button class="accordion-trigger" type="button" (click)="optionsOpen.set(!optionsOpen())">
+        <span appSectionTitle>Opções</span>
+        <svg class="accordion-chevron" [class.open]="optionsOpen()" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+        </svg>
+    </button>
+    <div class="accordion-body">
+        <div class="accordion-inner" [class.hidden]="!optionsOpen()">
+            <app-dominant-hand-filter [(dominantHand)]="dominantHand"></app-dominant-hand-filter>
+        </div>
+    </div>
+</div>
+
+<div class="scale-notes-panel">
+    <header class="scale-notes-header">
+        <button class="accordion-trigger scale-notes-trigger" type="button" (click)="scaleNotesOpen.set(!scaleNotesOpen())">
+            <div class="scale-notes-title-group">
+                <h2 appSectionTitle class="scale-notes-label">Notas da Escala</h2>
+                <span class="scale-notes-subtitle">{{ scaleLabel() }}</span>
+            </div>
+            <svg class="accordion-chevron" [class.open]="scaleNotesOpen()" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </button>
+        <app-help-modal
+            label="Intervalos"
+            ariaLabel="Guia de intervalos musicais"
+            title="Intervalos Musicais"
+            subtitle="Distância entre duas notas, medida em semitons">
+
+            <section class="intervals-intro-section">
+                <p class="intervals-intro">
+                    Um intervalo é a distância entre duas notas. Na guitarra ou baixo, cada traste
+                    equivale a <strong>meio tom (½T)</strong>. Os símbolos abaixo aparecem
+                    embaixo de cada nota na seção de notas da escala.
+                </p>
+            </section>
+
+            <section class="tones-section">
+                <h3 class="intervals-section-label">Tons e Semitons</h3>
+                <div class="tones-grid">
+                    <div class="tone-def-card">
+                        <div class="tone-def-header">
+                            <span class="tone-def-symbol">½T</span>
+                            <span class="tone-def-name">Semitom</span>
+                        </div>
+                        <p class="tone-def-desc">A menor distância entre duas notas. Na guitarra ou baixo, equivale a <strong>1 traste</strong>.</p>
+                        <span class="tone-def-example">Ex: Dó → Dó#</span>
+                    </div>
+                    <div class="tone-def-card">
+                        <div class="tone-def-header">
+                            <span class="tone-def-symbol">T</span>
+                            <span class="tone-def-name">Tom</span>
+                        </div>
+                        <p class="tone-def-desc">Equivale a <strong>2 semitons</strong>. Na guitarra ou baixo, equivale a <strong>2 trastes</strong>.</p>
+                        <span class="tone-def-example">Ex: Dó → Ré</span>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="intervals-section-label">Tabela de intervalos</h3>
+                <div class="intervals-table">
+                    <div class="intervals-row intervals-row--header">
+                        <span>Símbolo</span>
+                        <span>Nome</span>
+                        <span>½ Tons</span>
+                        <span>Exemplo</span>
+                    </div>
+                    @for (item of intervalsList; track item.symbol) {
+                    <div class="intervals-row" [class.intervals-row--tonic]="item.symbol === 'T'">
+                        <span class="interval-symbol">{{ item.symbol }}</span>
+                        <span class="interval-name">{{ item.name }}</span>
+                        <span class="interval-semitones">{{ item.semitones }}</span>
+                        <span class="interval-example">{{ item.example }}</span>
+                    </div>
+                    }
+                </div>
+            </section>
+
+            <section>
+                <h3 class="intervals-section-label">Intervalos por escala</h3>
+                <div class="scale-intervals-list">
+                    @for (scale of scaleIntervals; track scale.name) {
+                    <div class="scale-intervals-row">
+                        <span class="scale-intervals-name">{{ scale.name }}</span>
+                        <div class="scale-intervals-chips">
+                            @for (interval of scale.intervals; track interval) {
+                            <span class="interval-chip" [class.interval-chip--tonic]="interval === 'T'">
+                                {{ interval }}
+                            </span>
+                            }
+                        </div>
+                    </div>
+                    }
+                </div>
+            </section>
+
+        </app-help-modal>
+    </header>
+    <div class="accordion-body">
+        <div class="accordion-inner" [class.hidden]="!scaleNotesOpen()">
+            <div class="scale-notes-inner">
+                @for (item of scaleNotes(); track item.note) {
+                <div class="scale-note" [class.tonic]="item.interval === 'T'">
+                    <span class="note-name">{{ item.note }}</span>
+                    <span class="note-interval">{{ item.interval }}</span>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="shapes-grid">
     @for(shape of caged(); track $index) {
-    <app-shape [shape]="shape" />
+    <app-shape [shape]="shape" [tonic]="key()" />
     }
 </div>

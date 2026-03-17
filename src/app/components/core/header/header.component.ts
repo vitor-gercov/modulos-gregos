@@ -1,9 +1,10 @@
-import { Component, ElementRef, inject, signal, viewChild } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ThemeService } from '../../../services/theme.service';
+import { HelpModalComponent } from 'app/components/core/ui/help-modal/help-modal.component';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [HelpModalComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -15,21 +16,4 @@ export class HeaderComponent {
       path: '/caged'
     }
   ]);
-
-  helpDialog = viewChild<ElementRef<HTMLDialogElement>>('helpDialog');
-
-  openHelp(): void {
-    this.helpDialog()?.nativeElement.showModal();
-  }
-
-  closeHelp(): void {
-    this.helpDialog()?.nativeElement.close();
-  }
-
-  onDialogClick(event: MouseEvent): void {
-    const dialog = this.helpDialog()?.nativeElement;
-    if (event.target === dialog) {
-      dialog?.close();
-    }
-  }
 }
