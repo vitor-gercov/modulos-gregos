@@ -1,8 +1,5 @@
 @if(shape) {
-<section>
-    <h2 appSectionTitle>
-        {{ shape.title }}
-    </h2>
+<app-card [title]="shape.title">
     <table>
         <tbody>
             @for(guitarString of shape.guitarStrings; track $index) {
@@ -19,5 +16,5 @@
             }
         </tbody>
     </table>
-</section>
+</app-card>
 }
