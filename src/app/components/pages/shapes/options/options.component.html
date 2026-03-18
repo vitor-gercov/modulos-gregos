@@ -1,0 +1,15 @@
+@if (isDesktop()) {
+    <app-card title="Opções">
+        <app-dominant-hand-filter
+            [dominantHand]="state.dominantHand()"
+            (dominantHandChange)="state.dominantHand.set($event)">
+        </app-dominant-hand-filter>
+    </app-card>
+} @else {
+    <app-accordion title="Opções">
+        <app-dominant-hand-filter
+            [dominantHand]="state.dominantHand()"
+            (dominantHandChange)="state.dominantHand.set($event)">
+        </app-dominant-hand-filter>
+    </app-accordion>
+}

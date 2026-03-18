@@ -1,0 +1,115 @@
+<ng-template #intervalsModalContent>
+    <section class="intervals-intro-section">
+        <p class="intervals-intro">
+            Um intervalo é a distância entre duas notas. Na guitarra ou baixo, cada traste
+            equivale a <strong>meio tom (½T)</strong>. Os símbolos abaixo aparecem
+            embaixo de cada nota na seção de notas da escala.
+        </p>
+    </section>
+
+    <section class="tones-section">
+        <h3 class="intervals-section-label">Tons e Semitons</h3>
+        <div class="tones-grid">
+            <div class="tone-def-card">
+                <div class="tone-def-header">
+                    <span class="tone-def-symbol">½T</span>
+                    <span class="tone-def-name">Semitom</span>
+                </div>
+                <p class="tone-def-desc">A menor distância entre duas notas. Na guitarra ou baixo, equivale a <strong>1 traste</strong>.</p>
+                <span class="tone-def-example">Ex: Dó → Dó#</span>
+            </div>
+            <div class="tone-def-card">
+                <div class="tone-def-header">
+                    <span class="tone-def-symbol">T</span>
+                    <span class="tone-def-name">Tom</span>
+                </div>
+                <p class="tone-def-desc">Equivale a <strong>2 semitons</strong>. Na guitarra ou baixo, equivale a <strong>2 trastes</strong>.</p>
+                <span class="tone-def-example">Ex: Dó → Ré</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3 class="intervals-section-label">Tabela de intervalos</h3>
+        <div class="intervals-table">
+            <div class="intervals-row intervals-row--header">
+                <span>Símbolo</span>
+                <span>Nome</span>
+                <span>½ Tons</span>
+                <span>Exemplo</span>
+            </div>
+            @for (item of intervalsList; track item.symbol) {
+            <div class="intervals-row" [class.intervals-row--tonic]="item.symbol === 'T'">
+                <span class="interval-symbol">{{ item.symbol }}</span>
+                <span class="interval-name">{{ item.name }}</span>
+                <span class="interval-semitones">{{ item.semitones }}</span>
+                <span class="interval-example">{{ item.example }}</span>
+            </div>
+            }
+        </div>
+    </section>
+
+    <section>
+        <h3 class="intervals-section-label">Intervalos por escala</h3>
+        <div class="scale-intervals-list">
+            @for (scale of scaleIntervals; track scale.name) {
+            <div class="scale-intervals-row">
+                <span class="scale-intervals-name">{{ scale.name }}</span>
+                <div class="scale-intervals-chips">
+                    @for (interval of scale.intervals; track interval) {
+                    <span class="interval-chip" [class.interval-chip--tonic]="interval === 'T'">
+                        {{ interval }}
+                    </span>
+                    }
+                </div>
+            </div>
+            }
+        </div>
+    </section>
+</ng-template>
+
+@if (isDesktop()) {
+    <app-card
+        title="Notas da Escala"
+        [subtitle]="state.scaleLabel()"
+        helpLabel="Intervalos"
+        helpAriaLabel="Guia de intervalos musicais"
+        helpTitle="Intervalos Musicais"
+        helpSubtitle="Distância entre duas notas, medida em semitons">
+
+        <ng-container ngProjectAs="[slot=help]">
+            <ng-container *ngTemplateOutlet="intervalsModalContent"></ng-container>
+        </ng-container>
+
+        <div class="scale-notes-inner">
+            @for (item of state.scaleNotes(); track item.note) {
+            <div class="scale-note" [class.tonic]="item.interval === 'T'">
+                <span class="note-name">{{ item.note }}</span>
+                <span class="note-interval">{{ item.interval }}</span>
+            </div>
+            }
+        </div>
+    </app-card>
+} @else {
+    <app-accordion title="Notas da Escala" [subtitle]="state.scaleLabel()">
+        <div class="scale-notes-body">
+            <div class="scale-notes-help-row">
+                <app-help-modal
+                    label="Intervalos"
+                    ariaLabel="Guia de intervalos musicais"
+                    title="Intervalos Musicais"
+                    subtitle="Distância entre duas notas, medida em semitons">
+                    <ng-container *ngTemplateOutlet="intervalsModalContent"></ng-container>
+                </app-help-modal>
+            </div>
+            <div class="scale-notes-inner">
+                @for (item of state.scaleNotes(); track item.note) {
+                <div class="scale-note" [class.tonic]="item.interval === 'T'">
+                    <span class="note-name">{{ item.note }}</span>
+                    <span class="note-interval">{{ item.interval }}</span>
+                </div>
+                }
+            </div>
+        </div>
+    </app-accordion>
+}
