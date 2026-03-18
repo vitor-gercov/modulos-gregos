@@ -112,7 +112,7 @@ body {
   user-select: none;
 }
 
-.radio-option__input:checked+.radio-option__label {
+.radio-option__label--active {
   background: var(--color-accent);
   border-color: var(--color-accent);
   color: white;

@@ -2,27 +2,30 @@
     <label class="field-select__label" for="dominant_hand_select">
         Mão dominante
     </label>
-    <select class="select-input" name="scale" id="dominant_hand_select" [(ngModel)]="dominantHand">
-        <option value="right_handed" selected><span aria-hidden="true">👉</span> Sou destro</option>
+    <select class="select-input" id="dominant_hand_select" name="dominant_hand_select"
+        [ngModel]="dominantHand()" (ngModelChange)="dominantHand.set($event)">
+        <option value="right_handed"><span aria-hidden="true">👉</span> Sou destro</option>
         <option value="left_handed"><span aria-hidden="true">👈</span> Sou canhoto</option>
     </select>
 </div>
 <div class="field-radios">
-    <fieldset class="fieldset" id="dominant_hand_fieldset">
+    <fieldset class="fieldset">
         <legend class="fieldset__legend">
             Mão dominante
         </legend>
         <span class="radio-option">
-            <input class="radio-option__input" type="radio" id="right_handed_radio" name="dominant_hand" value="right_handed"
-                [(ngModel)]="dominantHand">
-            <label class="radio-option__label" for="right_handed_radio">
+            <input class="radio-option__input" type="radio" id="dominant_hand_right" name="dominant_hand" value="right_handed"
+                [ngModel]="dominantHand()" (ngModelChange)="dominantHand.set($event)">
+            <label class="radio-option__label" for="dominant_hand_right"
+                [class.radio-option__label--active]="dominantHand() === 'right_handed'">
                 <span aria-hidden="true">👉</span> Sou destro
             </label>
         </span>
         <span class="radio-option">
-            <input class="radio-option__input" type="radio" id="left_handed_radio" name="dominant_hand" value="left_handed"
-                [(ngModel)]="dominantHand">
-            <label class="radio-option__label" for="left_handed_radio">
+            <input class="radio-option__input" type="radio" id="dominant_hand_left" name="dominant_hand" value="left_handed"
+                [ngModel]="dominantHand()" (ngModelChange)="dominantHand.set($event)">
+            <label class="radio-option__label" for="dominant_hand_left"
+                [class.radio-option__label--active]="dominantHand() === 'left_handed'">
                 <span aria-hidden="true">👈</span> Sou canhoto
             </label>
         </span>

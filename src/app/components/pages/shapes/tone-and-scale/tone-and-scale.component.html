@@ -3,14 +3,11 @@
     <app-tone-and-scale-help-modal appCardHelp></app-tone-and-scale-help-modal>
 
     <div class="tone-and-scale__tone-row">
-        <app-tone-selector
-            [key]="state.key()"
-            (keyChange)="state.key.set($event)">
+        <app-tone-selector [key]="state.key()" (keyChange)="state.key.set($event)">
         </app-tone-selector>
     </div>
     <section class="tone-and-scale__select">
-        <select class="select-input" name="scale" id="scale_select"
-            [ngModel]="state.scaleSelected()"
+        <select class="select-input" name="scale" id="scale_select" [ngModel]="state.scaleSelected()"
             (ngModelChange)="state.scaleSelected.set($event)">
             <option value="major">Maior</option>
             <option value="penta">Penta</option>
@@ -21,21 +18,21 @@
         <fieldset class="fieldset" id="scale_fieldset">
             <span class="radio-option">
                 <input class="radio-option__input" type="radio" id="major_radio" name="scale" value="major"
-                    [ngModel]="state.scaleSelected()"
-                    (ngModelChange)="state.scaleSelected.set($event)">
-                <label class="radio-option__label" for="major_radio">Maior</label>
+                    [ngModel]="state.scaleSelected()" (ngModelChange)="state.scaleSelected.set($event)">
+                <label class="radio-option__label" for="major_radio"
+                    [class.radio-option__label--active]="state.scaleSelected() === 'major'">Maior</label>
             </span>
             <span class="radio-option">
                 <input class="radio-option__input" type="radio" id="penta_radio" name="scale" value="penta"
-                    [ngModel]="state.scaleSelected()"
-                    (ngModelChange)="state.scaleSelected.set($event)">
-                <label class="radio-option__label" for="penta_radio">Penta</label>
+                    [ngModel]="state.scaleSelected()" (ngModelChange)="state.scaleSelected.set($event)">
+                <label class="radio-option__label" for="penta_radio"
+                    [class.radio-option__label--active]="state.scaleSelected() === 'penta'">Penta</label>
             </span>
             <span class="radio-option">
                 <input class="radio-option__input" type="radio" id="penta_blues_radio" name="scale" value="penta_blues"
-                    [ngModel]="state.scaleSelected()"
-                    (ngModelChange)="state.scaleSelected.set($event)">
-                <label class="radio-option__label" for="penta_blues_radio">Penta Blues</label>
+                    [ngModel]="state.scaleSelected()" (ngModelChange)="state.scaleSelected.set($event)">
+                <label class="radio-option__label" for="penta_blues_radio"
+                    [class.radio-option__label--active]="state.scaleSelected() === 'penta_blues'">Penta Blues</label>
             </span>
         </fieldset>
     </section>

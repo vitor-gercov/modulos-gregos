@@ -12,6 +12,7 @@
     <app-dominant-hand-filter [dominantHand]="state.dominantHand()"
         (dominantHandChange)="state.dominantHand.set($event)">
     </app-dominant-hand-filter>
-    <app-string-count-filter [stringCount]="state.stringCount()" (stringCountChange)="state.stringCount.set($event)">
+    <app-string-count-filter [stringCount]="state.stringCount()"
+        (stringCountChange)="state.stringCount.set($event)">
     </app-string-count-filter>
 </app-accordion>
