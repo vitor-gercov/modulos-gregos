@@ -14,7 +14,10 @@
       "Bash(netstat -ano)",
       "Bash(curl -s http://localhost:4201)",
       "Bash(curl -s http://localhost:4200)",
-      "Bash(curl -s http://localhost:4200/shapes)"
+      "Bash(curl -s http://localhost:4200/shapes)",
+      "Bash(npx tsc:*)",
+      "Bash(node -e \"const p = require\\(''./package.json''\\); console.log\\(''@angular/core:'', p.dependencies[''@angular/core'']\\)\")",
+      "Bash(grep -n \"contentQueries\\\\|CardComponent\\\\|helpModal\" C:/Estudos/Guitarra/modulos-gregos/dist/modulos-gregos/browser/chunk-*.js)"
     ]
   }
 }

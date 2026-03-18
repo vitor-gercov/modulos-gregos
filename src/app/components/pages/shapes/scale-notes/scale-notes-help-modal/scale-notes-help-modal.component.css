@@ -1,0 +1,206 @@
+:host {
+    display: contents;
+}
+
+/* ── Conteúdo do modal de intervalos ─────────────────────────── */
+
+.intervals-section-label {
+    margin: 0 0 0.85rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text-subtle);
+}
+
+.intervals-intro-section {
+    padding: 0.85rem 1rem;
+    background: var(--color-accent-tint);
+    border: 1px solid var(--color-accent-border-faint);
+    border-radius: 0.65rem;
+}
+
+.intervals-intro {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.intervals-intro strong {
+    color: var(--color-accent-light);
+    font-weight: 600;
+}
+
+/* ── Tons e Semitons ─────────────────────────────────────────── */
+
+.tones-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+}
+
+.tone-def-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 0.85rem 1rem;
+    background: var(--color-surface-tint);
+    border: 1px solid var(--color-border);
+    border-radius: 0.65rem;
+}
+
+.tone-def-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tone-def-symbol {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-accent-light);
+    font-family: 'Roboto Mono', monospace;
+    min-width: 2rem;
+}
+
+.tone-def-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.tone-def-desc {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+}
+
+.tone-def-desc strong {
+    color: var(--color-accent-light);
+    font-weight: 600;
+}
+
+.tone-def-example {
+    font-size: 0.72rem;
+    color: var(--color-text-subtle);
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* ── Tabela de intervalos ────────────────────────────────────── */
+
+.intervals-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.intervals-row {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr 3rem 4.5rem;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.intervals-row--header {
+    font-size: 0.62rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-subtle);
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--color-border-subtle);
+    margin-bottom: 0.1rem;
+}
+
+.intervals-row:not(.intervals-row--header) {
+    background: var(--color-surface-tint);
+    transition: background 0.15s ease;
+}
+
+.intervals-row:not(.intervals-row--header):hover {
+    background: var(--color-surface-hover);
+}
+
+.intervals-row--tonic {
+    background: color-mix(in srgb, var(--color-accent) 10%, transparent) !important;
+    border: 1px solid var(--color-accent-border-faint);
+}
+
+.interval-symbol {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-accent-light);
+    font-family: 'Roboto Mono', monospace;
+}
+
+.intervals-row--tonic .interval-symbol {
+    color: var(--color-accent);
+}
+
+.interval-name {
+    font-size: 0.8rem;
+    color: var(--color-text);
+}
+
+.interval-semitones {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.interval-example {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* ── Intervalos por escala ────────────────────────────────────── */
+
+.scale-intervals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.scale-intervals-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.scale-intervals-name {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    min-width: 6.5rem;
+    flex-shrink: 0;
+}
+
+.scale-intervals-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.interval-chip {
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--color-border);
+    border-radius: 2rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    font-family: 'Roboto Mono', monospace;
+    background: var(--color-surface-tint);
+}
+
+.interval-chip--tonic {
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+    color: var(--color-accent);
+}

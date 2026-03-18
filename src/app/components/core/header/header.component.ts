@@ -1,10 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { ThemeService } from '../../../services/theme.service';
-import { HelpModalComponent } from 'app/components/core/ui/help-modal/help-modal.component';
+import { NotesHelpModalComponent } from './notes-help-modal/notes-help-modal.component';
 
 @Component({
   selector: 'app-header',
-  imports: [HelpModalComponent],
+  imports: [NotesHelpModalComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

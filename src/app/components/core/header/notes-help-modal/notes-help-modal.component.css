@@ -1,0 +1,126 @@
+:host {
+    display: contents;
+}
+
+/* ── Conteúdo do modal de notas ──────────────────────────────── */
+
+.section-label {
+    margin: 0 0 0.85rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text-subtle);
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+}
+
+.note-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.75rem 0.5rem;
+    background: var(--color-accent-tint);
+    border: 1px solid var(--color-accent-border-faint);
+    border-radius: 0.65rem;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.note-card:hover {
+    background: var(--color-accent-muted);
+    border-color: var(--color-accent-border);
+    transform: translateY(-1px);
+}
+
+.note-abc {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-accent-light);
+    line-height: 1;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.note-eq {
+    font-size: 0.65rem;
+    color: var(--color-text-faint);
+    line-height: 1;
+}
+
+.note-lasido {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    line-height: 1;
+}
+
+.symbols-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.symbol-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-surface-tint);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 0.65rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.symbol-card:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-border-medium);
+}
+
+.symbol-glyph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    flex-shrink: 0;
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent-border-subtle);
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-accent-hover);
+    font-family: 'Roboto Mono', monospace;
+}
+
+.symbol-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.symbol-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.symbol-desc {
+    font-size: 0.72rem;
+    color: var(--color-text-subtle);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+
+@media screen and (min-width: 480px) {
+    .notes-grid {
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    .note-abc {
+        font-size: 1.5rem;
+    }
+}

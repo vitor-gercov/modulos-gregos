@@ -7,15 +7,7 @@
             }
         </div>
 
-        @if (helpLabel() && helpTitle()) {
-            <app-help-modal
-                [label]="helpLabel()!"
-                [ariaLabel]="helpAriaLabel()"
-                [title]="helpTitle()!"
-                [subtitle]="helpSubtitle()">
-                <ng-content select="[slot=help]"></ng-content>
-            </app-help-modal>
-        }
+        <ng-content select="[appCardHelp]"></ng-content>
     </div>
 
     <ng-content></ng-content>
