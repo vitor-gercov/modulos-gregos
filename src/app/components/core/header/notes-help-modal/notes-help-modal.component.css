@@ -4,6 +4,13 @@
 
 /* ── Conteúdo do modal de notas ──────────────────────────────── */
 
+.modal-section-desc {
+    margin: 0 0 0.75rem;
+    font-size: 0.82rem;
+    color: var(--color-text-subtle);
+    line-height: 1.5;
+}
+
 .notes-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -20,12 +27,6 @@
     border: 1px solid var(--color-accent-border-faint);
     border-radius: 0.65rem;
     transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
-}
-
-.note-card:hover {
-    background: var(--color-accent-muted);
-    border-color: var(--color-accent-border);
-    transform: translateY(-1px);
 }
 
 .note-card__abc {
@@ -64,11 +65,6 @@
     border: 1px solid var(--color-border-subtle);
     border-radius: 0.65rem;
     transition: background 0.15s ease, border-color 0.15s ease;
-}
-
-.symbol-card:hover {
-    background: var(--color-surface-hover);
-    border-color: var(--color-border-medium);
 }
 
 .symbol-card__glyph {

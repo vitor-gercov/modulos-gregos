@@ -53,10 +53,6 @@
     transition: background 0.15s ease;
 }
 
-.scale-concepts__row:hover {
-    background: var(--color-surface-hover);
-}
-
 .scale-concepts__name {
     font-size: 0.82rem;
     font-weight: 600;
