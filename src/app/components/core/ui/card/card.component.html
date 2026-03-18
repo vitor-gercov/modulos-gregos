@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-header">
+        <div class="card-title-group">
+            <span appSectionTitle>{{ title() }}</span>
+            @if (subtitle()) {
+                <span class="card-subtitle">{{ subtitle() }}</span>
+            }
+        </div>
+
+        @if (helpLabel() && helpTitle()) {
+            <app-help-modal
+                [label]="helpLabel()!"
+                [ariaLabel]="helpAriaLabel()"
+                [title]="helpTitle()!"
+                [subtitle]="helpSubtitle()">
+                <ng-content select="[slot=help]"></ng-content>
+            </app-help-modal>
+        }
+    </div>
+
+    <ng-content></ng-content>
+</div>

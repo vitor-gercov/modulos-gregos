@@ -1,4 +1,5 @@
-import { Component, computed, inject, model, ModelSignal, Signal, signal } from '@angular/core';
+import { Component, computed, inject, model, ModelSignal, OnDestroy, OnInit, PLATFORM_ID, Signal, signal } from '@angular/core';
+import { isPlatformBrowser, NgTemplateOutlet } from '@angular/common';
 import { Shape } from '../../../models';
 import { FormsModule } from '@angular/forms';
 import { CAGED } from '../../../models/caged.model';
@@ -6,8 +7,9 @@ import { ShapeComponent } from 'app/components/shape/shape.component';
 import { DominantHandFilterComponent } from 'app/components/core/filters/dominant-hand-filter/dominant-hand-filter.component';
 import { ToneSelectorComponent } from 'app/components/core/filters/tone-selector/tone-selector.component';
 import { TranspositionService } from 'app/services/transposition.service';
+import { CardComponent } from 'app/components/core/ui/card/card.component';
+import { AccordionComponent } from 'app/components/core/ui/accordion/accordion.component';
 import { HelpModalComponent } from 'app/components/core/ui/help-modal/help-modal.component';
-import { SectionTitleDirective } from 'app/components/core/ui/section-title/section-title.directive';
 
 const SCALE_LABELS: Record<string, string> = {
   major: 'Maior',
@@ -26,22 +28,38 @@ const INTERVAL_NAMES: Record<number, string> = {
     ShapeComponent,
     DominantHandFilterComponent,
     ToneSelectorComponent,
+    CardComponent,
+    AccordionComponent,
     HelpModalComponent,
-    SectionTitleDirective,
+    NgTemplateOutlet,
     FormsModule,
   ],
   templateUrl: './shapes.component.html',
   styleUrl: './shapes.component.css'
 })
-export class ShapesComponent {
+export class ShapesComponent implements OnInit, OnDestroy {
   scaleSelected: ModelSignal<string> = model<string>('major');
   dominantHand = model<string>('right_handed');
   key = model<string>('C');
 
-  optionsOpen = signal(false);
-  scaleNotesOpen = signal(false);
+  private readonly platformId = inject(PLATFORM_ID);
+  readonly isDesktop = signal(false);
+  private mq: MediaQueryList | null = null;
+  private readonly mqListener = (e: MediaQueryListEvent) => this.isDesktop.set(e.matches);
 
   private transposition = inject(TranspositionService);
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.mq = window.matchMedia('(min-width: 700px)');
+      this.isDesktop.set(this.mq.matches);
+      this.mq.addEventListener('change', this.mqListener);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.mq?.removeEventListener('change', this.mqListener);
+  }
 
   caged: Signal<Shape[]> = computed(() => {
     const shapes = new CAGED(this.scaleSelected(), this.dominantHand()).shapes;

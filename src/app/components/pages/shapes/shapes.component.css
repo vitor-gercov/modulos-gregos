@@ -1,153 +1,22 @@
-.tone-panel {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    align-items: flex-start;
-    padding: 1rem 1.25rem;
-    background: var(--bg-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    margin-bottom: 1.5rem;
-}
-
-.tone-panel-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-basis: 100%;
-}
-
 .tone-selector-row {
     flex-basis: 100%;
 }
 
-.options-panel {
+.scale-notes-body {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    align-items: flex-start;
-    padding: 1rem 1.25rem;
-    background: var(--bg-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    margin-bottom: 1.5rem;
-}
-
-.options-panel > .accordion-trigger {
-    flex-basis: 100%;
-}
-
-.scale-notes-panel {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    padding: 1rem 1.25rem;
-    background: var(--bg-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    margin-bottom: 1.5rem;
-}
-
-.scale-notes-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
-    flex-basis: 100%;
-}
-
-/* ── Accordion ───────────────────────────────────────────────── */
-
-.accordion-trigger {
-    display: flex;
-    align-items: center;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    font-family: inherit;
-    color: inherit;
-    text-align: left;
+    flex-direction: column;
     gap: 0.5rem;
 }
 
-.scale-notes-trigger {
-    flex: 1;
-    min-width: 0;
-}
-
-.accordion-chevron {
-    width: 1rem;
-    height: 1rem;
-    color: var(--color-text-muted);
-    flex-shrink: 0;
-    transition: transform 0.28s ease;
-    margin-left: auto;
-    transform: rotate(-90deg);
-}
-
-.accordion-chevron.open {
-    transform: rotate(0deg);
-}
-
-.accordion-body {
-    flex-basis: 100%;
-}
-
-.accordion-inner {
-    padding-top: 0.25rem;
-}
-
-.accordion-inner.hidden {
-    display: none;
+.scale-notes-help-row {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .scale-notes-inner {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-}
-
-@media (min-width: 700px) {
-    .accordion-trigger {
-        pointer-events: none;
-        cursor: default;
-    }
-
-    .accordion-chevron {
-        display: none;
-    }
-
-    .accordion-inner {
-        padding-top: 0;
-    }
-
-    .accordion-inner.hidden {
-        display: block;
-    }
-
-    .scale-notes-inner {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-}
-
-.scale-notes-title-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.15rem;
-}
-
-.scale-notes-label {
-    margin: 0;
-}
-
-.scale-notes-subtitle {
-    font-size: 0.72rem;
-    color: var(--color-text-muted);
-    letter-spacing: 0.02em;
 }
 
 .scale-note {

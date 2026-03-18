@@ -1,0 +1,19 @@
+<details class="accordion">
+    <summary class="accordion-summary">
+        <div class="summary-content">
+            <div class="summary-title-group">
+                <span appSectionTitle>{{ title() }}</span>
+                @if (subtitle()) {
+                    <span class="accordion-subtitle">{{ subtitle() }}</span>
+                }
+            </div>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M6 9l6 6 6-6"/>
+            </svg>
+        </div>
+    </summary>
+
+    <div class="accordion-body">
+        <ng-content></ng-content>
+    </div>
+</details>

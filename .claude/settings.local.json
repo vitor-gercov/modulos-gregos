@@ -12,7 +12,9 @@
       "Read(//c/Projetos/Portfólio//**)",
       "Read(//c/Projetos/Portfólio/**)",
       "Bash(netstat -ano)",
-      "Bash(curl -s http://localhost:4201)"
+      "Bash(curl -s http://localhost:4201)",
+      "Bash(curl -s http://localhost:4200)",
+      "Bash(curl -s http://localhost:4200/shapes)"
     ]
   }
 }
