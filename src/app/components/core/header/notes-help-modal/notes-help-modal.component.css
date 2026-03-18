@@ -4,15 +4,6 @@
 
 /* ── Conteúdo do modal de notas ──────────────────────────────── */
 
-.section-label {
-    margin: 0 0 0.85rem;
-    font-size: 0.65rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--color-text-subtle);
-}
-
 .notes-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -37,7 +28,7 @@
     transform: translateY(-1px);
 }
 
-.note-abc {
+.note-card__abc {
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--color-accent-light);
@@ -45,13 +36,13 @@
     font-family: 'Roboto Mono', monospace;
 }
 
-.note-eq {
+.note-card__eq {
     font-size: 0.65rem;
     color: var(--color-text-faint);
     line-height: 1;
 }
 
-.note-lasido {
+.note-card__lasido {
     font-size: 0.82rem;
     font-weight: 500;
     color: var(--color-text-muted);
@@ -80,7 +71,7 @@
     border-color: var(--color-border-medium);
 }
 
-.symbol-glyph {
+.symbol-card__glyph {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,19 +87,19 @@
     font-family: 'Roboto Mono', monospace;
 }
 
-.symbol-info {
+.symbol-card__info {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
 }
 
-.symbol-name {
+.symbol-card__name {
     font-size: 0.88rem;
     font-weight: 600;
     color: var(--color-text-secondary);
 }
 
-.symbol-desc {
+.symbol-card__desc {
     font-size: 0.72rem;
     color: var(--color-text-subtle);
 }
@@ -120,7 +111,7 @@
         grid-template-columns: repeat(7, 1fr);
     }
 
-    .note-abc {
+    .note-card__abc {
         font-size: 1.5rem;
     }
 }

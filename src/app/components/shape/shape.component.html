@@ -1,13 +1,13 @@
 @if(shape) {
 <app-card [title]="shape.title">
-    <table>
+    <table class="shape-table">
         <tbody>
             @for(guitarString of shape.guitarStrings; track $index) {
             <tr>
                 @for(note of guitarString.notes; track $index) {
-                <td [ngClass]="{
-                    'nota': note !== '',
-                    'tonic': note !== '' && note === tonic
+                <td class="shape-table__cell" [ngClass]="{
+                    'shape-table__cell--nota': note !== '',
+                    'shape-table__cell--tonic': note !== '' && note === tonic
                 }">
                     {{ note }}
                 </td>

@@ -1,20 +1,16 @@
-table {
+.shape-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-td,
-th {
+.shape-table__cell {
     border: 1px solid var(--color-border);
     padding: 6px 8px;
     font-size: 0.82rem;
-}
-
-td {
     text-align: center;
 }
 
-thead th {
+.shape-table__header-cell {
     background-color: var(--bg-surface-2);
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -23,7 +19,7 @@ thead th {
     font-weight: 500;
 }
 
-tbody th {
+.shape-table__row-header {
     font-size: 0.75rem;
     color: var(--color-text-muted);
     font-weight: 400;
@@ -31,14 +27,14 @@ tbody th {
     background-color: rgba(0, 0, 0, 0.15);
 }
 
-.nota {
+.shape-table__cell--nota {
     box-shadow: inset 0 0 0 1px var(--color-accent);
     background: color-mix(in srgb, var(--color-accent) 12%, transparent);
     color: var(--color-accent);
     font-weight: 500;
 }
 
-.nota.tonic {
+.shape-table__cell--tonic {
     background: var(--color-accent);
     box-shadow: none;
     color: white;

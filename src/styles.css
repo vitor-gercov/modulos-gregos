@@ -14,14 +14,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-fieldset {
+/* ── Fieldset ─────────────────────────────────────────────── */
+
+.fieldset {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 0.5rem 1rem 0.75rem;
   margin: 0;
 }
 
-legend {
+.fieldset__legend {
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -29,11 +31,9 @@ legend {
   padding: 0 0.4rem;
 }
 
-input[type="radio"] + label {
-  cursor: pointer;
-}
+/* ── Select input ─────────────────────────────────────────── */
 
-select {
+.select-input {
   background-color: var(--bg-surface-2);
   color: var(--color-text);
   border: 1px solid var(--color-border);
@@ -44,13 +44,120 @@ select {
   outline: none;
   cursor: pointer;
   transition: border-color 0.2s;
+}
 
-  option {
-    background-color: var(--bg-surface-2);
-    color: var(--color-text);
+.select-input option {
+  background-color: var(--bg-surface-2);
+  color: var(--color-text);
+}
+
+.select-input:focus {
+  border-color: var(--color-accent);
+}
+
+/* ── Responsive field: mobile select / desktop radios ─────── */
+
+.field-select {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field-select__label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.field-radios {
+  display: none;
+}
+
+@media screen and (min-width: 700px) {
+  .field-select {
+    display: none;
+  }
+
+  .field-radios {
+    display: flex;
+    align-items: flex-end;
   }
 }
 
-select:focus {
+/* ── Radio option (shared pill button) ────────────────────── */
+
+.radio-option {
+  display: inline-flex;
+  position: relative;
+  margin-right: 0.25rem;
+}
+
+.radio-option__input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.radio-option__label {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  transition: all 0.18s ease;
+  user-select: none;
+}
+
+.radio-option__input:checked + .radio-option__label {
+  background: var(--color-accent);
   border-color: var(--color-accent);
+  color: white;
+}
+
+.radio-option__label:hover {
+  border-color: rgba(139, 92, 246, 0.5);
+  color: var(--color-text);
+}
+
+.radio-option__input:focus-visible + .radio-option__label {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ── Modal section label ──────────────────────────────────── */
+
+.modal-section-label {
+  margin: 0 0 0.85rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-subtle);
+}
+
+/* ── Modal intro section ──────────────────────────────────── */
+
+.modal-intro-section {
+  padding: 0.85rem 1rem;
+  background: var(--color-accent-tint);
+  border: 1px solid var(--color-accent-border-faint);
+  border-radius: 0.65rem;
+}
+
+.modal-intro {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ── Accent text utility ──────────────────────────────────── */
+
+.text--accent {
+  color: var(--color-accent-light);
 }

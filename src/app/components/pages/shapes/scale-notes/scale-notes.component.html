@@ -5,26 +5,26 @@
 
         <app-scale-notes-help-modal appCardHelp></app-scale-notes-help-modal>
 
-        <div class="scale-notes-inner">
+        <div class="scale-notes__inner">
             @for (item of state.scaleNotes(); track item.note) {
-            <div class="scale-note" [class.tonic]="item.interval === 'T'">
-                <span class="note-name">{{ item.note }}</span>
-                <span class="note-interval">{{ item.interval }}</span>
+            <div class="scale-note" [class.scale-note--tonic]="item.interval === 'T'">
+                <span class="scale-note__name">{{ item.note }}</span>
+                <span class="scale-note__interval">{{ item.interval }}</span>
             </div>
             }
         </div>
     </app-card>
 } @else {
     <app-accordion title="Notas da Escala" [subtitle]="state.scaleLabel()">
-        <div class="scale-notes-body">
-            <div class="scale-notes-help-row">
+        <div class="scale-notes__body">
+            <div class="scale-notes__help-row">
                 <app-scale-notes-help-modal></app-scale-notes-help-modal>
             </div>
-            <div class="scale-notes-inner">
+            <div class="scale-notes__inner">
                 @for (item of state.scaleNotes(); track item.note) {
-                <div class="scale-note" [class.tonic]="item.interval === 'T'">
-                    <span class="note-name">{{ item.note }}</span>
-                    <span class="note-interval">{{ item.interval }}</span>
+                <div class="scale-note" [class.scale-note--tonic]="item.interval === 'T'">
+                    <span class="scale-note__name">{{ item.note }}</span>
+                    <span class="scale-note__interval">{{ item.interval }}</span>
                 </div>
                 }
             </div>

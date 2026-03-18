@@ -4,63 +4,63 @@
     title="Intervalos Musicais"
     subtitle="Distância entre duas notas, medida em semitons">
 
-    <section class="intervals-intro-section">
-        <p class="intervals-intro">
+    <section class="modal-intro-section">
+        <p class="modal-intro">
             Um intervalo é a distância entre duas notas. Na guitarra ou baixo, cada traste
-            equivale a <strong>meio tom (½T)</strong>. Os símbolos abaixo aparecem
+            equivale a <strong class="text--accent">meio tom (½T)</strong>. Os símbolos abaixo aparecem
             embaixo de cada nota na seção de notas da escala.
         </p>
     </section>
 
-    <section class="tones-section">
-        <h3 class="intervals-section-label">Tons e Semitons</h3>
+    <section>
+        <h3 class="modal-section-label">Tons e Semitons</h3>
         <div class="tones-grid">
-            <div class="tone-def-card">
-                <div class="tone-def-header">
-                    <span class="tone-def-symbol">½T</span>
-                    <span class="tone-def-name">Semitom</span>
+            <div class="tone-def">
+                <div class="tone-def__header">
+                    <span class="tone-def__symbol">½T</span>
+                    <span class="tone-def__name">Semitom</span>
                 </div>
-                <p class="tone-def-desc">A menor distância entre duas notas. Na guitarra ou baixo, equivale a <strong>1 traste</strong>.</p>
-                <span class="tone-def-example">Ex: Dó → Dó#</span>
+                <p class="tone-def__desc">A menor distância entre duas notas. Na guitarra ou baixo, equivale a <strong class="text--accent">1 traste</strong>.</p>
+                <span class="tone-def__example">Ex: Dó → Dó#</span>
             </div>
-            <div class="tone-def-card">
-                <div class="tone-def-header">
-                    <span class="tone-def-symbol">T</span>
-                    <span class="tone-def-name">Tom</span>
+            <div class="tone-def">
+                <div class="tone-def__header">
+                    <span class="tone-def__symbol">T</span>
+                    <span class="tone-def__name">Tom</span>
                 </div>
-                <p class="tone-def-desc">Equivale a <strong>2 semitons</strong>. Na guitarra ou baixo, equivale a <strong>2 trastes</strong>.</p>
-                <span class="tone-def-example">Ex: Dó → Ré</span>
+                <p class="tone-def__desc">Equivale a <strong class="text--accent">2 semitons</strong>. Na guitarra ou baixo, equivale a <strong class="text--accent">2 trastes</strong>.</p>
+                <span class="tone-def__example">Ex: Dó → Ré</span>
             </div>
         </div>
     </section>
 
     <section>
-        <h3 class="intervals-section-label">Tabela de intervalos</h3>
+        <h3 class="modal-section-label">Tabela de intervalos</h3>
         <div class="intervals-table">
-            <div class="intervals-row intervals-row--header">
+            <div class="intervals-table__row intervals-table__row--header">
                 <span>Símbolo</span>
                 <span>Nome</span>
                 <span>½ Tons</span>
                 <span>Exemplo</span>
             </div>
             @for (item of intervalsList; track item.symbol) {
-            <div class="intervals-row" [class.intervals-row--tonic]="item.symbol === 'T'">
-                <span class="interval-symbol">{{ item.symbol }}</span>
-                <span class="interval-name">{{ item.name }}</span>
-                <span class="interval-semitones">{{ item.semitones }}</span>
-                <span class="interval-example">{{ item.example }}</span>
+            <div class="intervals-table__row" [class.intervals-table__row--tonic]="item.symbol === 'T'">
+                <span class="intervals-table__symbol">{{ item.symbol }}</span>
+                <span class="intervals-table__name">{{ item.name }}</span>
+                <span class="intervals-table__semitones">{{ item.semitones }}</span>
+                <span class="intervals-table__example">{{ item.example }}</span>
             </div>
             }
         </div>
     </section>
 
     <section>
-        <h3 class="intervals-section-label">Intervalos por escala</h3>
-        <div class="scale-intervals-list">
+        <h3 class="modal-section-label">Intervalos por escala</h3>
+        <div class="scale-intervals">
             @for (scale of scaleIntervals; track scale.name) {
-            <div class="scale-intervals-row">
-                <span class="scale-intervals-name">{{ scale.name }}</span>
-                <div class="scale-intervals-chips">
+            <div class="scale-intervals__row">
+                <span class="scale-intervals__name">{{ scale.name }}</span>
+                <div class="scale-intervals__chips">
                     @for (interval of scale.intervals; track interval) {
                     <span class="interval-chip" [class.interval-chip--tonic]="interval === 'T'">
                         {{ interval }}

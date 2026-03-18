@@ -4,7 +4,7 @@
 
 <app-scale-notes />
 
-<div class="shapes-grid">
+<div class="shapes__grid">
     @for(shape of caged(); track $index) {
     <app-shape [shape]="shape" [tonic]="key()" />
     }

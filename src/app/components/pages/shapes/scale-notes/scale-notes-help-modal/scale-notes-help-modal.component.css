@@ -2,36 +2,6 @@
     display: contents;
 }
 
-/* ── Conteúdo do modal de intervalos ─────────────────────────── */
-
-.intervals-section-label {
-    margin: 0 0 0.85rem;
-    font-size: 0.65rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--color-text-subtle);
-}
-
-.intervals-intro-section {
-    padding: 0.85rem 1rem;
-    background: var(--color-accent-tint);
-    border: 1px solid var(--color-accent-border-faint);
-    border-radius: 0.65rem;
-}
-
-.intervals-intro {
-    margin: 0;
-    font-size: 0.82rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-}
-
-.intervals-intro strong {
-    color: var(--color-accent-light);
-    font-weight: 600;
-}
-
 /* ── Tons e Semitons ─────────────────────────────────────────── */
 
 .tones-grid {
@@ -40,7 +10,7 @@
     gap: 0.65rem;
 }
 
-.tone-def-card {
+.tone-def {
     display: flex;
     flex-direction: column;
     gap: 0.45rem;
@@ -50,13 +20,13 @@
     border-radius: 0.65rem;
 }
 
-.tone-def-header {
+.tone-def__header {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-.tone-def-symbol {
+.tone-def__symbol {
     font-size: 1rem;
     font-weight: 700;
     color: var(--color-accent-light);
@@ -64,25 +34,20 @@
     min-width: 2rem;
 }
 
-.tone-def-name {
+.tone-def__name {
     font-size: 0.82rem;
     font-weight: 600;
     color: var(--color-text);
 }
 
-.tone-def-desc {
+.tone-def__desc {
     margin: 0;
     font-size: 0.78rem;
     color: var(--color-text-muted);
     line-height: 1.55;
 }
 
-.tone-def-desc strong {
-    color: var(--color-accent-light);
-    font-weight: 600;
-}
-
-.tone-def-example {
+.tone-def__example {
     font-size: 0.72rem;
     color: var(--color-text-subtle);
     font-family: 'Roboto Mono', monospace;
@@ -96,7 +61,7 @@
     gap: 0.25rem;
 }
 
-.intervals-row {
+.intervals-table__row {
     display: grid;
     grid-template-columns: 2.5rem 1fr 3rem 4.5rem;
     align-items: center;
@@ -105,7 +70,7 @@
     border-radius: 0.5rem;
 }
 
-.intervals-row--header {
+.intervals-table__row--header {
     font-size: 0.62rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -116,44 +81,44 @@
     margin-bottom: 0.1rem;
 }
 
-.intervals-row:not(.intervals-row--header) {
+.intervals-table__row:not(.intervals-table__row--header) {
     background: var(--color-surface-tint);
     transition: background 0.15s ease;
 }
 
-.intervals-row:not(.intervals-row--header):hover {
+.intervals-table__row:not(.intervals-table__row--header):hover {
     background: var(--color-surface-hover);
 }
 
-.intervals-row--tonic {
+.intervals-table__row--tonic {
     background: color-mix(in srgb, var(--color-accent) 10%, transparent) !important;
     border: 1px solid var(--color-accent-border-faint);
 }
 
-.interval-symbol {
+.intervals-table__symbol {
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--color-accent-light);
     font-family: 'Roboto Mono', monospace;
 }
 
-.intervals-row--tonic .interval-symbol {
+.intervals-table__row--tonic .intervals-table__symbol {
     color: var(--color-accent);
 }
 
-.interval-name {
+.intervals-table__name {
     font-size: 0.8rem;
     color: var(--color-text);
 }
 
-.interval-semitones {
+.intervals-table__semitones {
     font-size: 0.78rem;
     color: var(--color-text-muted);
     text-align: center;
     font-family: 'Roboto Mono', monospace;
 }
 
-.interval-example {
+.intervals-table__example {
     font-size: 0.78rem;
     color: var(--color-text-muted);
     font-family: 'Roboto Mono', monospace;
@@ -161,20 +126,20 @@
 
 /* ── Intervalos por escala ────────────────────────────────────── */
 
-.scale-intervals-list {
+.scale-intervals {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
 }
 
-.scale-intervals-row {
+.scale-intervals__row {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     flex-wrap: wrap;
 }
 
-.scale-intervals-name {
+.scale-intervals__name {
     font-size: 0.78rem;
     font-weight: 600;
     color: var(--color-text-secondary);
@@ -182,7 +147,7 @@
     flex-shrink: 0;
 }
 
-.scale-intervals-chips {
+.scale-intervals__chips {
     display: flex;
     flex-wrap: wrap;
     gap: 0.3rem;

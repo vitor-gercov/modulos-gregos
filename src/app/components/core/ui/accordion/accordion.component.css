@@ -12,7 +12,7 @@
 
 /* ── Summary (trigger) ───────────────────────────────────────── */
 
-.accordion-summary {
+.accordion__summary {
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -20,15 +20,15 @@
     user-select: none;
 }
 
-.accordion-summary::-webkit-details-marker {
+.accordion__summary::-webkit-details-marker {
     display: none;
 }
 
-.accordion-summary::marker {
+.accordion__summary::marker {
     display: none;
 }
 
-.summary-content {
+.accordion__summary-content {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -36,7 +36,7 @@
     min-width: 0;
 }
 
-.summary-title-group {
+.accordion__title-group {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -45,7 +45,7 @@
     min-width: 0;
 }
 
-.accordion-subtitle {
+.accordion__subtitle {
     font-size: 0.72rem;
     color: var(--color-text-muted);
     letter-spacing: 0.02em;
@@ -53,7 +53,7 @@
 
 /* ── Chevron ─────────────────────────────────────────────────── */
 
-.accordion-chevron {
+.accordion__chevron {
     width: 1rem;
     height: 1rem;
     color: var(--color-text-muted);
@@ -62,12 +62,12 @@
     transform: rotate(-90deg);
 }
 
-.accordion[open] .accordion-chevron {
+.accordion[open] .accordion__chevron {
     transform: rotate(0deg);
 }
 
 /* ── Body ────────────────────────────────────────────────────── */
 
-.accordion-body {
+.accordion__body {
     padding-top: 0.5rem;
 }

@@ -1,15 +1,15 @@
-.scale-notes-body {
+.scale-notes__body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.scale-notes-help-row {
+.scale-notes__help-row {
     display: flex;
     justify-content: flex-end;
 }
 
-.scale-notes-inner {
+.scale-notes__inner {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -27,30 +27,29 @@
     background: color-mix(in srgb, var(--color-accent) 12%, transparent);
 }
 
-.scale-note.tonic {
+.scale-note--tonic {
     background: var(--color-accent);
 }
 
-.note-name {
+.scale-note__name {
     font-size: 1rem;
     font-weight: 600;
     color: var(--color-accent);
     line-height: 1;
 }
 
-.scale-note.tonic .note-name {
+.scale-note--tonic .scale-note__name {
     color: white;
 }
 
-.scale-note.tonic .note-interval {
+.scale-note--tonic .scale-note__interval {
     color: rgba(255, 255, 255, 0.75);
 }
 
-.note-interval {
+.scale-note__interval {
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--color-text-muted);
     line-height: 1;
 }
-
