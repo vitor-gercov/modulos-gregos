@@ -43,11 +43,3 @@ tbody th {
     box-shadow: none;
     color: white;
 }
-
-tbody tr:hover .nota {
-    background: color-mix(in srgb, var(--color-accent) 20%, transparent);
-}
-
-tbody tr:hover .nota.tonic {
-    background: var(--color-accent-hover);
-}
