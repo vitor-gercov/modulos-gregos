@@ -20,7 +20,9 @@
       "Bash(grep -n \"contentQueries\\\\|CardComponent\\\\|helpModal\" C:/Estudos/Guitarra/modulos-gregos/dist/modulos-gregos/browser/chunk-*.js)",
       "Bash(grep -E \"\\\\.\\(tsx?|jsx?\\)$\")",
       "Bash(xargs grep:*)",
-      "Bash(grep -E \"^d|^-.*\\\\.\\(json|ts|yml|yaml\\)$\")"
+      "Bash(grep -E \"^d|^-.*\\\\.\\(json|ts|yml|yaml\\)$\")",
+      "Bash(find /c/Estudos/Guitarra/modulos-gregos/src -type f \\\\\\(-name *.ts -o -name *.tsx -o -name *.html \\\\\\))",
+      "Bash(xargs ls:*)"
     ]
   }
 }

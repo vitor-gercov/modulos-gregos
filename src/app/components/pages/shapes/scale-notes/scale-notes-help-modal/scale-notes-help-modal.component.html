@@ -1,7 +1,4 @@
-<app-help-modal
-    label="Intervalos"
-    ariaLabel="Guia de intervalos musicais"
-    title="Intervalos Musicais"
+<app-help-modal label="Intervalos" ariaLabel="Guia de intervalos musicais" title="Intervalos Musicais"
     subtitle="Distância entre duas notas, medida em semitons">
 
     <section class="modal-intro-section">
@@ -20,7 +17,8 @@
                     <span class="tone-def__symbol">½T</span>
                     <span class="tone-def__name">Semitom</span>
                 </div>
-                <p class="tone-def__desc">A menor distância entre duas notas. Na guitarra ou baixo, equivale a <strong class="text--accent">1 traste</strong>.</p>
+                <p class="tone-def__desc">A menor distância entre duas notas. Na guitarra ou baixo, equivale a <strong
+                        class="text--accent">1 traste</strong>.</p>
                 <span class="tone-def__example">Ex: Dó → Dó#</span>
             </div>
             <div class="tone-def">
@@ -28,7 +26,8 @@
                     <span class="tone-def__symbol">T</span>
                     <span class="tone-def__name">Tom</span>
                 </div>
-                <p class="tone-def__desc">Equivale a <strong class="text--accent">2 semitons</strong>. Na guitarra ou baixo, equivale a <strong class="text--accent">2 trastes</strong>.</p>
+                <p class="tone-def__desc">Equivale a <strong class="text--accent">2 semitons</strong>. Na guitarra ou
+                    baixo, equivale a <strong class="text--accent">2 trastes</strong>.</p>
                 <span class="tone-def__example">Ex: Dó → Ré</span>
             </div>
         </div>
@@ -71,5 +70,82 @@
             }
         </div>
     </section>
+
+    <section>
+        <h3 class="modal-section-label">Shape no instrumento</h3>
+        <p class="modal-intro-small">
+            Shape de 3 cordas e 3 notas por corda. Replique o padrão abaixo a partir da
+            <strong class="text--accent">tônica (T)</strong> em qualquer posição do braço para encontrar os intervalos
+            respectivos. <strong class="text--accent">Atenção:</strong> Esses shapes valem apenas partindo das duas
+            primeiras cordas do instrumento, por conta da diferença de intervalo que existe entre a corda G e a B.
+        </p>
+
+        <div class="hand-toggle" role="group" aria-label="Mão dominante">
+            <button class="hand-toggle__btn" [class.hand-toggle__btn--active]="dominantHand() === 'right_handed'"
+                (click)="dominantHand.set('right_handed')">
+                👉 Destro
+            </button>
+            <button class="hand-toggle__btn" [class.hand-toggle__btn--active]="dominantHand() === 'left_handed'"
+                (click)="dominantHand.set('left_handed')">
+                👈 Canhoto
+            </button>
+        </div>
+
+        <div class="scale-shapes">
+            @for (shape of scaleShapes(); track shape.label) {
+            <div class="scale-shape-card">
+                <span class="scale-shape-card__title">{{ shape.label }}</span>
+                <table class="scale-shape-table">
+                    <tbody>
+                        @for (row of shape.rows; track $index) {
+                        <tr>
+                            @for (cell of row; track $index) {
+                            <td class="scale-shape-table__cell" [class.scale-shape-table__cell--interval]="cell !== ''"
+                                [class.scale-shape-table__cell--tonic]="cell === 'T'">
+                                {{ cell }}
+                            </td>
+                            }
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            }
+        </div>
+    </section>
+
+    <!-- <section>
+        <h3 class="modal-section-label">Guia no instrumento</h3>
+        <p class="modal-intro-small">
+            Partindo da tônica <strong class="text--accent">(T)</strong> na 6ª corda em corda solta,
+            veja os intervalos em cada traste para todas as cordas — afinação padrão (E A D G B e).
+        </p>
+
+        <div class="fretboard-guide">
+            <table class="fretboard-guide__table">
+                <thead>
+                    <tr>
+                        <th class="fretboard-guide__cell fretboard-guide__cell--label"></th>
+                        @for (label of fretLabels(); track $index) {
+                        <th class="fretboard-guide__cell fretboard-guide__cell--fret-num">{{ label }}</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (guitarString of fretboard(); track guitarString.label + $index) {
+                    <tr>
+                        <td class="fretboard-guide__cell fretboard-guide__cell--label">{{ guitarString.label }}</td>
+                        @for (interval of guitarString.frets; track $index) {
+                        <td class="fretboard-guide__cell fretboard-guide__cell--interval"
+                            [class.fretboard-guide__cell--tonic]="interval === 'T'">
+                            {{ interval }}
+                        </td>
+                        }
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section> -->
 
 </app-help-modal>
