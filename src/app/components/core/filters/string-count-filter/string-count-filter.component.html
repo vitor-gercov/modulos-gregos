@@ -1,0 +1,38 @@
+<div class="field-select">
+    <label class="field-select__label" for="string_count_select">
+        Quantidade de cordas
+    </label>
+    <select class="select-input" name="string_count" id="string_count_select" [(ngModel)]="stringCount">
+        <option [value]="6">6 cordas</option>
+        <option [value]="5">5 cordas</option>
+        <option [value]="4">4 cordas</option>
+    </select>
+</div>
+<div class="field-radios">
+    <fieldset class="fieldset" id="string_count_fieldset">
+        <legend class="fieldset__legend">
+            Quantidade de cordas
+        </legend>
+        <span class="radio-option">
+            <input class="radio-option__input" type="radio" id="strings_6_radio" name="string_count" [value]="6"
+                [ngModel]="stringCount()" (ngModelChange)="stringCount.set($event)">
+            <label class="radio-option__label" for="strings_6_radio">
+                6 cordas
+            </label>
+        </span>
+        <span class="radio-option">
+            <input class="radio-option__input" type="radio" id="strings_5_radio" name="string_count" [value]="5"
+                [ngModel]="stringCount()" (ngModelChange)="stringCount.set($event)">
+            <label class="radio-option__label" for="strings_5_radio">
+                5 cordas
+            </label>
+        </span>
+        <span class="radio-option">
+            <input class="radio-option__input" type="radio" id="strings_4_radio" name="string_count" [value]="4"
+                [ngModel]="stringCount()" (ngModelChange)="stringCount.set($event)">
+            <label class="radio-option__label" for="strings_4_radio">
+                4 cordas
+            </label>
+        </span>
+    </fieldset>
+</div>

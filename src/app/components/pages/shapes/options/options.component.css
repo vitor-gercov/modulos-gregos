@@ -1,0 +1,23 @@
+.options__card {
+    display: none;
+}
+
+.options__accordion {
+    display: block;
+}
+
+.options__filters {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+@media screen and (min-width: 700px) {
+    .options__accordion {
+        display: none;
+    }
+
+    .options__card {
+        display: block;
+    }
+}

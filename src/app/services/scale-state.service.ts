@@ -21,6 +21,7 @@ export class ScaleStateService {
   readonly key = signal('C');
   readonly scaleSelected = signal('major');
   readonly dominantHand = signal('right_handed');
+  readonly stringCount = signal<number>(6);
 
   readonly caged = computed<Shape[]>(() => {
     const shapes = new CAGED(this.scaleSelected(), this.dominantHand()).shapes;

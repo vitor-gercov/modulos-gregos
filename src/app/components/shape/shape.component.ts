@@ -12,4 +12,5 @@ import { CardComponent } from 'app/components/core/ui/card/card.component';
 export class ShapeComponent {
   @Input({ required: true }) shape!: Shape;
   @Input() tonic: string = '';
+  @Input() stringCount: number = 6;
 }

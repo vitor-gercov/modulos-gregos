@@ -2,7 +2,7 @@
 <app-card [title]="shape.title">
     <table class="shape-table">
         <tbody>
-            @for(guitarString of shape.guitarStrings; track $index) {
+            @for(guitarString of shape.guitarStrings.slice(-stringCount); track $index) {
             <tr>
                 @for(note of guitarString.notes; track $index) {
                 <td class="shape-table__cell" [ngClass]="{

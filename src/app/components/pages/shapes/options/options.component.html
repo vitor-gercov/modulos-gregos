@@ -1,15 +1,17 @@
-@if (isDesktop()) {
-    <app-card title="Opções">
-        <app-dominant-hand-filter
-            [dominantHand]="state.dominantHand()"
+<app-card class="options__card" title="Opções">
+    <div class="options__filters">
+        <app-dominant-hand-filter [dominantHand]="state.dominantHand()"
             (dominantHandChange)="state.dominantHand.set($event)">
         </app-dominant-hand-filter>
-    </app-card>
-} @else {
-    <app-accordion title="Opções">
-        <app-dominant-hand-filter
-            [dominantHand]="state.dominantHand()"
-            (dominantHandChange)="state.dominantHand.set($event)">
-        </app-dominant-hand-filter>
-    </app-accordion>
-}
+        <app-string-count-filter [stringCount]="state.stringCount()"
+            (stringCountChange)="state.stringCount.set($event)">
+        </app-string-count-filter>
+    </div>
+</app-card>
+<app-accordion class="options__accordion" title="Opções">
+    <app-dominant-hand-filter [dominantHand]="state.dominantHand()"
+        (dominantHandChange)="state.dominantHand.set($event)">
+    </app-dominant-hand-filter>
+    <app-string-count-filter [stringCount]="state.stringCount()" (stringCountChange)="state.stringCount.set($event)">
+    </app-string-count-filter>
+</app-accordion>

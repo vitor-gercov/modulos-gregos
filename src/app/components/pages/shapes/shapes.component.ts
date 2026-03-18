@@ -21,4 +21,5 @@ export class ShapesComponent {
 
   readonly caged = this.state.caged;
   readonly key = this.state.key;
+  readonly stringCount = this.state.stringCount;
 }
