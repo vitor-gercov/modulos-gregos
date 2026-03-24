@@ -8,6 +8,7 @@ import { Directive } from '@angular/core';
     '[style.text-transform]': '"uppercase"',
     '[style.letter-spacing]': '"0.12em"',
     '[style.color]': '"var(--color-accent-hover)"',
+    '[style.margin]': '"0px"'
   }
 })
-export class SectionTitleDirective {}
+export class SectionTitleDirective { }

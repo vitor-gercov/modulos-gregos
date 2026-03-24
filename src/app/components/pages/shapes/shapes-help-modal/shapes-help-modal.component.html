@@ -1,0 +1,126 @@
+<app-help-modal
+    label="Posição no Braço"
+    ariaLabel="Guia de posição no braço do instrumento"
+    title="Posição no Braço"
+    subtitle="Como localizar qualquer nota no instrumento">
+
+    <section class="modal-intro-section">
+        <p class="modal-intro">
+            Os shapes são padrões de digitação que se repetem ao longo de todo o braço.
+            Para usá-los, você precisa saber <strong class="text--accent">onde está a tônica</strong>
+            no instrumento. Este guia mostra como encontrar qualquer nota usando as
+            <strong class="text--accent">cordas abertas</strong> como ponto de partida.
+        </p>
+    </section>
+
+    <section>
+        <h3 class="modal-section-label">Cordas abertas — afinação padrão</h3>
+        <p class="modal-intro-small">
+            Na afinação padrão, cada corda solta produz uma nota de referência. A partir
+            dela, cada traste adicional sobe <strong class="text--accent">1 semitom</strong>.
+        </p>
+        <div class="open-strings">
+            @for (s of openStrings; track s.number) {
+            <div class="open-string">
+                <span class="open-string__number">{{ s.number }}</span>
+                <span class="open-string__note">{{ s.note }}</span>
+                <span class="open-string__label">{{ s.label }}</span>
+            </div>
+            }
+        </div>
+    </section>
+
+    <section>
+        <h3 class="modal-section-label">Trastes e semitons</h3>
+        <div class="semitone-rule">
+            <div class="semitone-rule__equation">
+                <span class="semitone-rule__pill">1 traste</span>
+                <span class="semitone-rule__eq">=</span>
+                <span class="semitone-rule__pill">1 semitom</span>
+            </div>
+            <p class="semitone-rule__desc">
+                Cada traste corresponde a 1 semitom. No
+                <strong class="text--accent">12º traste</strong> você encontra a mesma nota
+                uma oitava acima — e o ciclo se repete.
+            </p>
+        </div>
+        <div class="fret-example">
+            <span class="fret-example__label">Exemplo — 6ª corda (E)</span>
+            <div class="fret-example__row">
+                <div class="fret-example__item fret-example__item--open">
+                    <span class="fret-example__note">E</span>
+                    <span class="fret-example__num">0</span>
+                </div>
+                <span class="fret-example__arrow">›</span>
+                <div class="fret-example__item">
+                    <span class="fret-example__note">F</span>
+                    <span class="fret-example__num">1</span>
+                </div>
+                <span class="fret-example__arrow">›</span>
+                <div class="fret-example__item">
+                    <span class="fret-example__note">F#</span>
+                    <span class="fret-example__num">2</span>
+                </div>
+                <span class="fret-example__arrow">›</span>
+                <div class="fret-example__item">
+                    <span class="fret-example__note">G</span>
+                    <span class="fret-example__num">3</span>
+                </div>
+                <span class="fret-example__arrow">···</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3 class="modal-section-label">Mapa do braço</h3>
+        <p class="modal-intro-small">
+            Referência das notas nos primeiros 12 trastes em afinação padrão.
+            <strong class="text--accent">Notas naturais</strong> estão destacadas. Use
+            este mapa para localizar a tônica antes de aplicar o shape.
+        </p>
+
+        <div class="hand-toggle" role="group" aria-label="Mão dominante">
+            <button class="hand-toggle__btn"
+                [class.hand-toggle__btn--active]="dominantHand() === 'right_handed'"
+                (click)="dominantHand.set('right_handed')">
+                👉 Destro
+            </button>
+            <button class="hand-toggle__btn"
+                [class.hand-toggle__btn--active]="dominantHand() === 'left_handed'"
+                (click)="dominantHand.set('left_handed')">
+                👈 Canhoto
+            </button>
+        </div>
+
+        <div class="fretboard-map">
+            <table class="fretboard-map__table">
+                <thead>
+                    <tr>
+                        <th class="fretboard-map__cell fretboard-map__cell--header"></th>
+                        @for (label of fretLabels(); track $index) {
+                        <th class="fretboard-map__cell fretboard-map__cell--fret-num">{{ label }}</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (guitarString of fretboard(); track $index) {
+                    <tr>
+                        <td class="fretboard-map__cell fretboard-map__cell--string-label">
+                            <span class="fretboard-map__string-num">{{ guitarString.number }}</span>
+                            <span class="fretboard-map__string-letter">{{ guitarString.label }}</span>
+                        </td>
+                        @for (note of guitarString.frets; track $index) {
+                        <td class="fretboard-map__cell"
+                            [class.fretboard-map__cell--natural]="isNatural(note)"
+                            [class.fretboard-map__cell--sharp]="!isNatural(note)">
+                            {{ note }}
+                        </td>
+                        }
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</app-help-modal>

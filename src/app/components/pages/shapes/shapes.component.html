@@ -4,6 +4,11 @@
 
 <app-scale-notes />
 
+<div class="shapes__section-header">
+    <h2 appSectionTitle>Shapes</h2>
+    <app-shapes-help-modal />
+</div>
+
 <div class="shapes__grid">
     @for(shape of caged(); track $index) {
     <app-shape [shape]="shape" [tonic]="key()" [stringCount]="stringCount()" />

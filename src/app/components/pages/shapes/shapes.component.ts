@@ -4,6 +4,8 @@ import { ScaleStateService } from 'app/services/scale-state.service';
 import { ToneAndScaleComponent } from './tone-and-scale/tone-and-scale.component';
 import { OptionsComponent } from './options/options.component';
 import { ScaleNotesComponent } from './scale-notes/scale-notes.component';
+import { ShapesHelpModalComponent } from './shapes-help-modal/shapes-help-modal.component';
+import { SectionTitleDirective } from "app/components/core/ui/section-title/section-title.directive";
 
 @Component({
   selector: 'app-shapes',
@@ -12,6 +14,8 @@ import { ScaleNotesComponent } from './scale-notes/scale-notes.component';
     ToneAndScaleComponent,
     OptionsComponent,
     ScaleNotesComponent,
+    ShapesHelpModalComponent,
+    SectionTitleDirective
   ],
   templateUrl: './shapes.component.html',
   styleUrl: './shapes.component.css'

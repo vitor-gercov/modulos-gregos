@@ -1,0 +1,258 @@
+:host {
+    display: contents;
+}
+
+/* ── Cordas abertas ──────────────────────────────────────────── */
+
+.open-strings {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+}
+
+.open-string {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.65rem 0.5rem;
+    background: var(--color-surface-tint);
+    border: 1px solid var(--color-border);
+    border-radius: 0.65rem;
+}
+
+.open-string__number {
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-subtle);
+}
+
+.open-string__note {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-accent-light);
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1;
+}
+
+.open-string__label {
+    font-size: 0.68rem;
+    color: var(--color-text-muted);
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* ── Texto auxiliar pequeno ──────────────────────────────────── */
+
+.modal-intro-small {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin: 0 0 0.85rem;
+}
+
+/* ── Regra de semitons ───────────────────────────────────────── */
+
+.semitone-rule {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.85rem 1rem;
+    background: var(--color-surface-tint);
+    border: 1px solid var(--color-border);
+    border-radius: 0.65rem;
+    margin-bottom: 0.85rem;
+}
+
+.semitone-rule__equation {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.semitone-rule__pill {
+    padding: 0.25rem 0.7rem;
+    background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+    border: 1px solid var(--color-accent-border);
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-accent-light);
+    font-family: 'Roboto Mono', monospace;
+}
+
+.semitone-rule__eq {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-subtle);
+}
+
+.semitone-rule__desc {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+}
+
+/* ── Exemplo de trastes ──────────────────────────────────────── */
+
+.fret-example {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.fret-example__label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-subtle);
+}
+
+.fret-example__row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.fret-example__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.4rem 0.6rem;
+    background: var(--color-surface-tint);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    min-width: 2.2rem;
+}
+
+.fret-example__item--open {
+    border-color: var(--color-accent-border);
+    background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+}
+
+.fret-example__note {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-text);
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1;
+}
+
+.fret-example__item--open .fret-example__note {
+    color: var(--color-accent-light);
+}
+
+.fret-example__num {
+    font-size: 0.6rem;
+    color: var(--color-text-subtle);
+    font-family: 'Roboto Mono', monospace;
+}
+
+.fret-example__arrow {
+    font-size: 0.9rem;
+    color: var(--color-text-subtle);
+    flex-shrink: 0;
+}
+
+/* ── Toggle destro / canhoto ─────────────────────────────────── */
+
+.hand-toggle {
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 0.85rem;
+}
+
+.hand-toggle__btn {
+    flex: 1;
+    padding: 0.42rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: var(--color-surface-tint);
+    color: var(--color-text-muted);
+    transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.hand-toggle__btn--active {
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+    color: var(--color-accent);
+}
+
+/* ── Mapa do braço ───────────────────────────────────────────── */
+
+.fretboard-map {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.fretboard-map__table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 500px;
+}
+
+.fretboard-map__cell {
+    border: 1px solid var(--color-border);
+    padding: 5px 4px;
+    font-size: 0.7rem;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--color-text-muted);
+}
+
+.fretboard-map__cell--header {
+    background: var(--color-surface-tint);
+    border-color: transparent;
+}
+
+.fretboard-map__cell--fret-num {
+    background: var(--color-surface-tint);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--color-text-subtle);
+    font-family: inherit;
+    padding: 4px 5px;
+}
+
+.fretboard-map__cell--string-label {
+    background: var(--color-surface-tint);
+    padding: 5px 8px;
+    white-space: nowrap;
+    font-family: inherit;
+}
+
+.fretboard-map__string-num {
+    display: block;
+    font-size: 0.58rem;
+    color: var(--color-text-subtle);
+    letter-spacing: 0.04em;
+}
+
+.fretboard-map__string-letter {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    font-family: 'Roboto Mono', monospace;
+}
+
+.fretboard-map__cell--natural {
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+    color: var(--color-accent-light);
+    font-weight: 600;
+}
+
+.fretboard-map__cell--sharp {
+    color: var(--color-text-subtle);
+    font-size: 0.65rem;
+}

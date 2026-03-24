@@ -1,5 +1,4 @@
 import { Component, computed, signal } from '@angular/core';
-import { NgClass } from '@angular/common';
 import { HelpModalComponent } from 'app/components/core/ui/help-modal/help-modal.component';
 
 const INTERVAL_SYMBOLS = ['T', '2m', '2M', '3m', '3M', '4J', 'TT', '5J', '6m', '6M', '7m', '7M'] as const;
@@ -30,7 +29,7 @@ const MINOR_SHAPE = [
 
 @Component({
   selector: 'app-scale-notes-help-modal',
-  imports: [HelpModalComponent, NgClass],
+  imports: [HelpModalComponent],
   templateUrl: './scale-notes-help-modal.component.html',
   styleUrl: './scale-notes-help-modal.component.css'
 })
