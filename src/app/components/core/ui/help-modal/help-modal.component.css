@@ -22,6 +22,12 @@
     flex-shrink: 0;
 }
 
+@media (max-width: 768px) {
+    .help-modal__trigger span {
+        display: none;
+    }
+}
+
 .help-modal__trigger:hover {
     background: var(--color-accent-muted);
     border-color: var(--color-accent-border-strong);
