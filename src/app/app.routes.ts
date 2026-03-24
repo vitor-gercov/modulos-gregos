@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { ShapesComponent } from './components/pages/shapes/shapes.component';
+import { ShapesComponent } from 'pages/shapes/ui/shapes.component';
 
 export const routes: Routes = [
     {

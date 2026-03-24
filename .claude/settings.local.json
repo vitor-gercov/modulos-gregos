@@ -22,7 +22,10 @@
       "Bash(xargs grep:*)",
       "Bash(grep -E \"^d|^-.*\\\\.\\(json|ts|yml|yaml\\)$\")",
       "Bash(find /c/Estudos/Guitarra/modulos-gregos/src -type f \\\\\\(-name *.ts -o -name *.tsx -o -name *.html \\\\\\))",
-      "Bash(xargs ls:*)"
+      "Bash(xargs ls:*)",
+      "WebFetch(domain:feature-sliced.design)",
+      "Bash(wc -l /c/Estudos/Guitarra/modulos-gregos/src/app/consts/*.const.ts)",
+      "Bash(git mv:*)"
     ]
   }
 }

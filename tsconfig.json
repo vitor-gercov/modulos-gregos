@@ -19,20 +19,26 @@
     "module": "ES2022",
     "baseUrl": "src",
     "paths": {
-      "@services": [
-        "app/services"
-      ],
-      "@components": [
-        "app/components"
-      ],
-      "@components/pages": [
-        "app/components/pages"
-      ],
       "@types": [
-        "app/types"
+        "shared/types"
       ],
       "@models": [
-        "app/models"
+        "entities/scale/model"
+      ],
+      "@shared": [
+        "shared"
+      ],
+      "@entities": [
+        "entities"
+      ],
+      "@features": [
+        "features"
+      ],
+      "@widgets": [
+        "widgets"
+      ],
+      "@pages": [
+        "pages"
       ]
     }
   },
