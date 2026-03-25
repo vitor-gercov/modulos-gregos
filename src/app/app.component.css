@@ -1,5 +1,12 @@
 .page-layout {
     padding: 1.5rem;
+    padding-bottom: calc(1.5rem + 4.5rem); /* folga + altura do footer-nav mobile */
     max-width: 1400px;
     margin: 0 auto;
+}
+
+@media screen and (min-width: 700px) {
+    .page-layout {
+        padding-bottom: 1.5rem;
+    }
 }

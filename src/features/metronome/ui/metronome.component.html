@@ -1,0 +1,96 @@
+<section class="metronome" aria-label="Metrônomo">
+
+  <!-- Exibição do BPM -->
+  <div class="metronome__bpm-display" aria-live="polite" [attr.aria-label]="metronome.bpmLabel()">
+    <span class="metronome__bpm-number">{{ metronome.bpm() }}</span>
+    <span class="metronome__bpm-unit">BPM</span>
+  </div>
+
+  <!-- Indicadores de pulso -->
+  <div class="metronome__beats" role="presentation" aria-hidden="true">
+    @for (i of beatIndices; track i) {
+      <div
+        class="metronome__beat"
+        [class.metronome__beat--active]="metronome.isPlaying() && metronome.currentBeat() === i"
+        [class.metronome__beat--first]="i === 0">
+      </div>
+    }
+  </div>
+
+  <!-- Slider de BPM -->
+  <div class="metronome__slider-group">
+    <span class="metronome__slider-label">20</span>
+    <input
+      class="metronome__slider"
+      type="range"
+      min="20"
+      max="240"
+      step="1"
+      [value]="metronome.bpm()"
+      (input)="onBpmInput($event)"
+      aria-label="Velocidade em BPM">
+    <span class="metronome__slider-label">240</span>
+  </div>
+
+  <!-- Botões de ajuste fino -->
+  <div class="metronome__adjust" role="group" aria-label="Ajuste de BPM">
+    <button class="metronome__adjust-btn" type="button" (click)="metronome.decrementBpm(5)" aria-label="Diminuir 5 BPM">−5</button>
+    <button class="metronome__adjust-btn" type="button" (click)="metronome.decrementBpm(1)" aria-label="Diminuir 1 BPM">−1</button>
+    <button class="metronome__adjust-btn" type="button" (click)="metronome.incrementBpm(1)" aria-label="Aumentar 1 BPM">+1</button>
+    <button class="metronome__adjust-btn" type="button" (click)="metronome.incrementBpm(5)" aria-label="Aumentar 5 BPM">+5</button>
+  </div>
+
+  <!-- Botão play/stop -->
+  <button
+    class="metronome__play-btn"
+    type="button"
+    (click)="metronome.toggle()"
+    [class.metronome__play-btn--active]="metronome.isPlaying()"
+    [attr.aria-label]="metronome.isPlaying() ? 'Parar metrônomo' : 'Iniciar metrônomo'">
+    @if (metronome.isPlaying()) {
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <rect x="6" y="4" width="4" height="16" rx="1"/>
+        <rect x="14" y="4" width="4" height="16" rx="1"/>
+      </svg>
+      <span>Parar</span>
+    } @else {
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <polygon points="5,3 19,12 5,21"/>
+      </svg>
+      <span>Iniciar</span>
+    }
+  </button>
+
+  <!-- Controles secundários -->
+  <div class="metronome__secondary">
+
+    <!-- Tap tempo -->
+    <button
+      class="metronome__tap-btn"
+      type="button"
+      (click)="onTap()"
+      aria-label="Tap Tempo — toque para definir o BPM">
+      {{ tapLabel() }}
+    </button>
+
+    <!-- Compasso -->
+    <div class="metronome__time-sig">
+      <label class="metronome__time-sig-label" for="time-signature">Compasso</label>
+      <div class="metronome__time-sig-options" role="group" aria-label="Compasso">
+        @for (option of timeSignatureOptions; track option) {
+          <button
+            class="metronome__time-sig-btn"
+            type="button"
+            [class.metronome__time-sig-btn--active]="metronome.beatsPerMeasure() === option"
+            (click)="metronome.setBeatsPerMeasure(option)"
+            [attr.aria-pressed]="metronome.beatsPerMeasure() === option"
+            [attr.aria-label]="option + ' tempos por compasso'">
+            {{ option }}/4
+          </button>
+        }
+      </div>
+    </div>
+
+  </div>
+
+</section>

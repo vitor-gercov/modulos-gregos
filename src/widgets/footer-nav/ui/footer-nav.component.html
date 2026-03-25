@@ -1,0 +1,47 @@
+<nav class="footer-nav" aria-label="Navegação principal">
+
+  <a class="footer-nav__item"
+     routerLink="/"
+     routerLinkActive="footer-nav__item--active"
+     [routerLinkActiveOptions]="{ exact: true }"
+     aria-label="Shapes — escalas e acordes">
+    <!-- Ícone: diagrama de braço de guitarra -->
+    <svg class="footer-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+      <!-- cordas (verticais) -->
+      <line x1="7"  y1="3" x2="7"  y2="21"/>
+      <line x1="12" y1="3" x2="12" y2="21"/>
+      <line x1="17" y1="3" x2="17" y2="21"/>
+      <!-- trastes (horizontais) -->
+      <line x1="5" y1="3"  x2="19" y2="3"/>
+      <line x1="5" y1="9"  x2="19" y2="9"/>
+      <line x1="5" y1="15" x2="19" y2="15"/>
+      <line x1="5" y1="21" x2="19" y2="21"/>
+      <!-- notas pressionadas -->
+      <circle cx="7"  cy="12" r="2.2" fill="currentColor" stroke="none"/>
+      <circle cx="12" cy="6"  r="2.2" fill="currentColor" stroke="none"/>
+      <circle cx="17" cy="18" r="2.2" fill="currentColor" stroke="none"/>
+    </svg>
+    <span class="footer-nav__label">Shapes</span>
+  </a>
+
+  <a class="footer-nav__item"
+     routerLink="/metronomo"
+     routerLinkActive="footer-nav__item--active"
+     aria-label="Metrônomo">
+    <!-- Ícone: metrônomo clássico -->
+    <svg class="footer-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <!-- corpo trapezoidal -->
+      <path d="M6 21L9 3h6l3 18H6z"/>
+      <!-- pêndulo -->
+      <line x1="12" y1="19" x2="17" y2="7"/>
+      <!-- peso do pêndulo -->
+      <circle cx="17" cy="7" r="1.8" fill="currentColor" stroke="none"/>
+      <!-- marca central -->
+      <line x1="12" y1="19" x2="12" y2="14" stroke-width="1"/>
+    </svg>
+    <span class="footer-nav__label">Metrônomo</span>
+  </a>
+
+</nav>

@@ -3,6 +3,20 @@
     <img ngSrc="assets/images/logo.png" priority width="40" height="40" alt="Scales and Shapes logo">
     <h1 class="header__title">Scales and Shapes.com</h1>
   </div>
+
+  <nav class="header__nav" aria-label="Navegação principal">
+    @for (item of navItems; track item.path) {
+      <a
+        class="header__nav-link"
+        [routerLink]="item.path"
+        routerLinkActive="header__nav-link--active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [attr.aria-current]="item.path === '/' ? 'page' : null">
+        {{ item.label }}
+      </a>
+    }
+  </nav>
+
   <div class="header__actions">
     <button class="header__theme-toggle" type="button" (click)="themeService.toggle()"
       [attr.aria-label]="themeService.theme() === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'">

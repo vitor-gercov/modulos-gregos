@@ -1,0 +1,22 @@
+.metronome-page {
+  padding: 1.5rem 1rem 3rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.metronome-page__header {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.metronome-page__subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+@media screen and (min-width: 700px) {
+  .metronome-page {
+    padding: 2rem 2rem 4rem;
+  }
+}
