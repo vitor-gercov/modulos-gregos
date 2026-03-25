@@ -59,6 +59,7 @@
         align-items: center;
         justify-content: center;
         gap: 0.25rem;
+        margin-right: 0.75rem;
     }
 }
 
